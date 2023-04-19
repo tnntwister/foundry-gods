@@ -1,0 +1,22 @@
+{
+  "TOTEM.AbilityStr": "Strength",
+  "TOTEM.AbilityCon": "Constitution",
+  "TOTEM.AbilityDex": "Dexterity",
+  "TOTEM.AbilityInt": "Intelligence",
+  "TOTEM.AbilityWis": "Wisdom",
+  "TOTEM.AbilityCha": "Charisma",
+
+  "TOTEM.AbilityStrAbbr": "str",
+  "TOTEM.AbilityConAbbr": "con",
+  "TOTEM.AbilityDexAbbr": "dex",
+  "TOTEM.AbilityIntAbbr": "int",
+  "TOTEM.AbilityWisAbbr": "wis",
+  "TOTEM.AbilityChaAbbr": "cha",
+
+  "TOTEM.EffectCreate": "Create Effect",
+  "TOTEM.EffectToggle": "Toggle Effect",
+  "TOTEM.EffectEdit": "Edit Effect",
+  "TOTEM.EffectDelete": "Delete Effect",
+
+  "TOTEM.Add": "Add"
+}
