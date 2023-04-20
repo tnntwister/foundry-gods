@@ -21,23 +21,28 @@
       "templates": ["base"],
       "attributes": {
         "level": {
+          "label":"TOTEM.level",
           "value": 1
+        },
+        "self_control": {
+          "label":"TOTEM.self_control",
+          "value": 0,
+          "min": 0,
+          "max": 5
+        },
+        "effort": {
+          "label":"TOTEM.effort",
+          "value": 0, 
+          "min": 0,
+          "max": 5
+        },
+        "group": {
+          "label":"TOTEM.group",
+          "value": 0,
+          "min": 0,
+          "max": 5
         }
-      },
-      "AbilityCategories": {
-        "physical": {
-          "label":"TOTEM.abilityCategory.physical"
-        },
-        "manual": {
-          "label":"TOTEM.abilityCategory.manual"
-        },
-        "mental": {
-          "label":"TOTEM.abilityCategory.mental"
-        },
-        "social": {
-          "label":"TOTEM.abilityCategory.social"
-        }
-      },
+      },      
       "abilities": {
         "vig": {
           "label":"TOTEM.abilities.vigor",
@@ -94,26 +99,6 @@
           "min": 0,
           "max": 5,
           "category": "social"
-        }
-      },
-      "skillCategories": {
-        "man": {
-          "label":"TOTEM.skillCategory.man"
-        },
-        "animal": {
-          "label":"TOTEM.skillCategory.animal"
-        },
-        "machine": {
-          "label":"TOTEM.skillCategory.machine"
-        },
-        "weapon": {
-          "label":"TOTEM.skillCategory.weapon"
-        },
-        "survival": {
-          "label":"TOTEM.skillCategory.survival"
-        },
-        "earth": {
-          "label":"TOTEM.skillCategory.earth"
         }
       },
       "skills": {

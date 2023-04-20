@@ -1,3 +1,7 @@
+import { registerHandlebarsHelpers } from "./system/helpers.mjs";
+import { registerHooks } from "./system/hooks.mjs";
+import { registerSettings } from "./system/settings.mjs";
+
 // Import document classes.
 import { TotemActor } from "./documents/actor.mjs";
 import { TotemItem } from "./documents/item.mjs";
@@ -6,7 +10,7 @@ import { TotemActorSheet } from "./sheets/actor-sheet.mjs";
 import { TotemItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { TOTEM } from "./helpers/config.mjs";
+import { TOTEM } from "./system/config.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -43,6 +47,10 @@ Hooks.once('init', async function() {
   Actors.registerSheet("totem", TotemActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("totem", TotemItemSheet, { makeDefault: true });
+
+  registerHandlebarsHelpers(); // Register Handlebars helpers
+  registerHooks(); // register Hooks
+  registerSettings(); // register Engrenages Settings
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();

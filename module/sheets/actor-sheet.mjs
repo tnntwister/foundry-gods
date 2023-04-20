@@ -38,7 +38,8 @@ export class TotemActorSheet extends ActorSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
-
+    context.config = CONFIG.TOTEM;
+    
     // Prepare character data and items.
     if (actorData.type == 'character') {
       this._prepareItems(context);
@@ -69,7 +70,7 @@ export class TotemActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.TOTEM.abilities[k]) ?? k;
+      v.label = game.i18n.localize(context.system.abilities[k].label) ?? k;
     }
   }
 

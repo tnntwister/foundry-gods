@@ -14,21 +14,11 @@ export const registerHooks = function () {
         if ($("#pause").attr("class") !== "paused") return;
         $(".paused img").attr("src", 'systems/totem/images/pause.webp');
         $(".paused img").css({ "opacity": 1});
-        $("#pause.paused").css({ "display": "flex", "justify-content": "center" });
-        $("#pause.paused figcaption").css({ "width": `256px`, "height": `256px` });
-        $("#pause.paused figcaption").text(game.i18n.localize("TOTEM.PausedText"));
+        $("#pause.paused figcaption").text("En cours de destruction...");
     });
 
-    /*Hooks.on("renderPause", ((_app, html) => {
-        html.find("img").attr("src", "systems/bol/ui/pause2.webp")
-    }))
-
-    Hooks.on('renderChatLog', (log, html, data) => BoLUtility.chatListeners(html))
-    Hooks.on('renderChatMessage', (message, html, data) => BoLUtility.chatMessageHandler(message, html, data))
-    */
-    console.log("rendering hooks");
-    Hooks.on('renderChatLog', (log, html, data) => TotemFight.chatListeners(html));
-    Hooks.on('renderChatMessage', (message, html, data) => TotemFight.chatMessageHandler(message, html, data));
+    // Hooks.on('renderChatLog', (log, html, data) => TotemFight.chatListeners(html));
+    // Hooks.on('renderChatMessage', (message, html, data) => TotemFight.chatMessageHandler(message, html, data));
 
     /**
      * Create a macro when dropping an entity on the hotbar
