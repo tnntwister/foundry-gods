@@ -26,9 +26,9 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://gitlab.com/init-status/fvtt_systems/totem",
+  "manifest": "https://gitlab.com/init-status/fvtt_systems/totem/-/raw/main/system.json",
+  "download": "https://gitlab.com/api/v4/projects/44983384/repository/archive.zip",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"
 }
