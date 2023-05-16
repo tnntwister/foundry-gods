@@ -1,5 +1,11 @@
 # CHANGELOG
 
-## 1.2.0
 
-- Add support for Foundry v10
+
+## 0.0.2
+
+- Ajout du logo
+
+## 0.0.1
+
+- Création du dépôt
