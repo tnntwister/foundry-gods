@@ -20,7 +20,7 @@ export class TotemCharacterSheet extends TotemActorSheet {
 
   /** @override */
   get template() {
-    return `systems/totem/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/totem/templates/actor/actor-character-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -205,7 +205,7 @@ export class TotemCharacterSheet extends TotemActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
-
+    console.log("Ceci est un jet d'un personnage joueur");
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
@@ -217,14 +217,10 @@ export class TotemCharacterSheet extends TotemActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-      return roll;
+        const label = game.i18n.localize(dataset.label) ? `[ability] ${game.i18n.localize(dataset.label)}` : '';
+        console.log($(element).attr('for'), this.actor.system.skills[$(element).attr('for').split('.')[2]].value);
+        const NoD = this.actor.system.skills[$(element).attr('for').split('.')[2]]?.value || 0
+       return game.totem.TotemRoll.roll(this.actor.id, label, NoD, 0, {});
     }
   }
 

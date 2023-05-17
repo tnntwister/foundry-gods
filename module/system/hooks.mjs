@@ -1,4 +1,3 @@
-import { TotemFight } from './fight.mjs';
 
 export const registerHooks = function () {
     /**
@@ -34,7 +33,7 @@ export const registerHooks = function () {
     });
 
     Hooks.on('getSceneControlButtons', (controls) => {
-        controls.find((c) => c.name === 'token').tools.push({
+        /*controls.find((c) => c.name === 'token').tools.push({
         name: 'Dice Roller',
         title: game.i18n.localize("TOTEM.RollTool"),
         icon: 'fas fa-dice-d6',
@@ -42,7 +41,7 @@ export const registerHooks = function () {
         onClick() {
             TotemRoll.ui();
         }
-        });
+        });*/
     });
 
     /* -------------------------------------------- */
@@ -50,7 +49,7 @@ export const registerHooks = function () {
     /* -------------------------------------------- */
 
     Hooks.on("preCreateActor", function (actor) {
-        console.log('pre create actor', actor);
+        // console.log('pre create actor', actor);
         if (actor.img == "icons/svg/mystery-man.svg") {
         // actor.updateSource({"img": `systems/totem/icons/actors/${actor.type}.webp`});
         // item.updateSource({"img": `systems/totem/icons/competence.webp`});
@@ -90,6 +89,18 @@ export const registerHooks = function () {
         }*/
         }
     });
+
+   /* Hooks.on("chatCommandsReady", function (chatCommands) {
+        chatCommands.registerCommand(chatCommands.createCommandFromData({
+          commandKey: "/dr",
+          invokeOnCommand: (chatlog, messageText, chatdata) => {
+            Roll.get().parse(messageText);
+          },
+          shouldDisplayToChat: false,
+          iconClass: "fa-dice-d6",
+          description: "Roll Totem check"
+        }));
+      });*/
   
     
 }

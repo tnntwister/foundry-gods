@@ -1,10 +1,6 @@
 {
-  "TOTEM.AbilityStrAbbr": "str",
-  "TOTEM.AbilityConAbbr": "con",
-  "TOTEM.AbilityDexAbbr": "dex",
-  "TOTEM.AbilityIntAbbr": "int",
-  "TOTEM.AbilityWisAbbr": "wis",
-  "TOTEM.AbilityChaAbbr": "cha",
+  "TOTEM.WorldSettings.GameMode.Name":"Choix du mode de jeu",
+  "TOTEM.WorldSettings.GameMode.Hint":"À l’image de certains jeux vidéo proposant différents, Vermine 2047 permet aux joueurs de choisir leur Mode de jeu et de fixer eux-mêmes le degré de réalisme, de surnaturel et de dangerosité de l’univers.",
 
   "TOTEM.level": "Niveau",
   "TOTEM.pool": "Réserve",
