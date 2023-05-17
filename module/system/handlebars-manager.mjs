@@ -7,9 +7,9 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/totem/templates/actor/parts/actor-traits.html",
-    "systems/totem/templates/actor/parts/actor-background.html",
-    "systems/totem/templates/actor/parts/actor-skills.html",
+    "systems/totem/templates/actor/parts/actor-spells.html",
+    "systems/totem/templates/actor/parts/actor-features.html",
+    // "systems/totem/templates/actor/parts/actor-skills.html",
     "systems/totem/templates/actor/parts/actor-items.html",
     "systems/totem/templates/actor/parts/actor-effects.html",
   ]);

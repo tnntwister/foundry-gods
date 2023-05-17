@@ -5,7 +5,7 @@ import { TotemActorSheet } from "./actor-sheet.mjs";
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class TotemActorSheet extends ActorSheet {
+export class TotemCreatureSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
