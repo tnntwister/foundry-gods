@@ -49,7 +49,7 @@ TOTEM.skillCategories = {
   "animal": {
     "label":"TOTEM.skillCategory.animal"
   },
-  "machine": {
+  "tool": {
     "label":"TOTEM.skillCategory.machine"
   },
   "weapon": {
@@ -58,7 +58,7 @@ TOTEM.skillCategories = {
   "survival": {
     "label":"TOTEM.skillCategory.survival"
   },
-  "earth": {
+  "world": {
     "label":"TOTEM.skillCategory.earth"
   }
 }

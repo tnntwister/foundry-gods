@@ -187,7 +187,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "machine",
+          "category": "tool",
           "rarity":2
         },
         "diy": {
@@ -195,7 +195,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "machine",
+          "category": "tool",
           "rarity":0
         },
         "mecanical": {
@@ -203,7 +203,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "machine",
+          "category": "tool",
           "rarity":2
         },
         "driving": {
@@ -211,7 +211,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "machine",
+          "category": "tool",
           "rarity":1
         },
         "technology": {
@@ -219,7 +219,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "machine",
+          "category": "tool",
           "rarity":2
         },
         "firearms": {
@@ -307,7 +307,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "earth",
+          "category": "world",
           "rarity":0
         },
         "flora": {
@@ -315,7 +315,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "earth",
+          "category": "world",
           "rarity":0
         },
         "road": {
@@ -323,7 +323,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "earth",
+          "category": "world",
           "rarity":0
         },
         "toxics": {
@@ -331,7 +331,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "earth",
+          "category": "world",
           "rarity":0
         },
         "remains": {
@@ -339,7 +339,7 @@
           "value": 0,
           "min": 0,
           "max": 5,
-          "category": "earth",
+          "category": "world",
           "rarity":0
         }      
       }
@@ -394,7 +394,7 @@
       "templates": ["base"],
       "quantity": 1,
       "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+      "formula": "d10 + @str.mod + ceil(@lvl / 2)"
     },
     "feature": {
       "templates": ["base"]

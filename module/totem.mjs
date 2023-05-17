@@ -1,15 +1,21 @@
-import { registerHandlebarsHelpers } from "./system/helpers.mjs";
 import { registerHooks } from "./system/hooks.mjs";
 import { registerSettings } from "./system/settings.mjs";
 
 // Import document classes.
 import { TotemActor } from "./documents/actor.mjs";
+import { TotemCharacter } from "./documents/character.mjs";
+import { TotemNpc } from "./documents/npc.mjs";
+import { TotemCreature } from "./documents/creature.mjs";
+
+import { TotemCharacterSheet } from "./sheets/character-sheet.mjs";
+import { TotemNpcSheet } from "./sheets/npc-sheet.mjs";
+import { TotemCreatureSheet } from "./sheets/creature-sheet.mjs";
+
 import { TotemItem } from "./documents/item.mjs";
-// Import sheet classes.
-import { TotemActorSheet } from "./sheets/actor-sheet.mjs";
 import { TotemItemSheet } from "./sheets/item-sheet.mjs";
+
 // Import helper/utility classes and constants.
-import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
+import { preloadHandlebarsTemplates, registerHandlebarsHelpers } from "./system/handlebars-manager.mjs";
 import { TOTEM } from "./system/config.mjs";
 
 /* -------------------------------------------- */
@@ -21,7 +27,9 @@ Hooks.once('init', async function() {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.totem = {
-    TotemActor,
+    TotemCharacter,
+    TotemNpc,
+    TotemCreature,
     TotemItem,
     rollItemMacro
   };
@@ -34,7 +42,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "1d20 + @abilities.dex.mod",
+    formula: "1d10 + @abilities.dex.mod",
     decimals: 2
   };
 
@@ -44,7 +52,20 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("totem", TotemActorSheet, { makeDefault: true });
+  Actors.registerSheet('totem', TotemCharacterSheet, {
+      types: ['character'],
+      makeDefault: true,
+    });
+
+  Actors.registerSheet('totem', TotemNpcSheet, {
+      types: ['npc'],
+      makeDefault: true,
+    });
+
+  Actors.registerSheet('totem', TotemCreatureSheet, {
+    types: ['creature'],
+    makeDefault: true,
+  }); // Register vehicle Sheet
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("totem", TotemItemSheet, { makeDefault: true });
 

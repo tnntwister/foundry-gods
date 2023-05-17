@@ -1,4 +1,5 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../system/effects.mjs";
+import { TotemActorSheet } from "./actor-sheet.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications

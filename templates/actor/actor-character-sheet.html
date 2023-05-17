@@ -62,7 +62,7 @@
               
               {{#ife skill.category sckey }}                       
                 <div class="ability flexrow flex-group-center">
-                  <label style="flex:80%;" for="system.skills.{{skey}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@skills.{{skey}}.mod" data-label="{{skill.label}}">{{ localize skill.label}}</label>
+                  <label style="flex:80%;" for="system.skills.{{skey}}.value" class="resource-label rollable flexlarge align-left" data-roll="+@skills.{{skey}}d10" data-label="{{skill.label}}">{{ localize skill.label}}  ({{skill.rarity}})</label>
                   <input type="text" name="system.skills.{{skey}}.value" value="{{skill.value}}" data-dtype="Number"/>
                 </div>
                 {{/ife}}
