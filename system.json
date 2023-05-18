@@ -2,7 +2,7 @@
   "id": "totem",
   "title": "Totem",
   "description": "The Totem system for FoundryVTT!",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "compatibility": {
     "minimum": 10,
     "verified": "10.287",
