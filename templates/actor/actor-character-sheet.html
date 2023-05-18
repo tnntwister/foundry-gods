@@ -41,11 +41,11 @@
       <section class="grid grid-4col">
         {{#each config.abilityCategories as |abilityCategory ackey|}}
           <div>
-            <h4>{{ localize abilityCategory.label }}</h4>
+            <h4 class="align-center">{{ localize abilityCategory.label }}</h4>
             {{#each @root.system.abilities as |ability key|}}
               {{#ife ability.category ackey }}
                 <div class="ability flexcol flex-group-center items-center">
-                  <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{ability.label}}</label>
+                  <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ability.label}}">{{ability.label}}</label>
                   <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
                 </div>
               {{/ife}}

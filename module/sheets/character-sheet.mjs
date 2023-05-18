@@ -1,5 +1,6 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../system/effects.mjs";
 import { TotemActorSheet } from "./actor-sheet.mjs";
+import { getRollBox } from "../system/dialogs.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -216,11 +217,14 @@ export class TotemCharacterSheet extends TotemActorSheet {
     }
 
     // Handle rolls that supply the formula directly.
-    if (dataset.roll) {
-        const label = game.i18n.localize(dataset.label) ? `[ability] ${game.i18n.localize(dataset.label)}` : '';
-        console.log($(element).attr('for'), this.actor.system.skills[$(element).attr('for').split('.')[2]].value);
+    if (dataset.label) {
+        /*const label = game.i18n.localize(dataset.label) ? `[ability] ${game.i18n.localize(dataset.label)}` : '';
+        console.log($(element).attr('for'));
         const NoD = this.actor.system.skills[$(element).attr('for').split('.')[2]]?.value || 0
-       return game.totem.TotemRoll.roll(this.actor.id, label, NoD, 0, {});
+       return game.totem.TotemRoll.roll(this.actor.id, label, NoD, 0, {});*/
+       let data = {};
+       getRollBox(data);
+       return true;
     }
   }
 

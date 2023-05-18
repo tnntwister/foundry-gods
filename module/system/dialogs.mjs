@@ -34,3 +34,70 @@
   
   
   }
+
+  export const getRollBox = async function(data) {
+    let html = await renderTemplate('systems/totem/templates/roll.hbs', data);
+    let ui = new Dialog({
+      title: game.i18n.localize("TOTEM.RollTool"),
+      content: html,
+      buttons: {
+        roll: {
+          label: game.i18n.localize('TOTEM.RollDice'),
+          callback: (html) => {
+            let form = html.find('#dice-pool-form');
+            if (!form[0].checkValidity()) {
+              throw "Invalid Data";
+            }
+            let target = 0, trait, usingSpecialization, difficulty, skill = 0, params = {};
+            form.serializeArray().forEach(e => {
+              switch (e.name) {
+                case "difficulty":
+                  if (e.value != "")
+                    difficulty = -e.value;
+                  break;
+                case "skillLabel":
+                  params.skill = e.value;
+                  break;
+                case "usure":
+                  params.usure = +e.value;
+                  break;
+                case "skill":
+                    skill = +e.value;
+                    break;
+                case "trait":
+                  trait = +e.value;
+                  break;
+                case "usingSpecialization":
+                  if (e.value && +e.value > 1)
+                    usingSpecialization = +e.value;
+                  break;
+              }
+
+              // prise en compte de l'usure sur la feuille de perso
+              if (params.usure != undefined){
+                updateActorSkillScore(actor, data.skill, 'spent', data.skillSpent + parseInt(params.usure,10));
+              }
+            });
+            return EcrymeRoll.get().performTest(data.dicePool, target, trait, usingSpecialization, difficulty, skill, params, actor);
+          }
+        },
+        close: {
+          label: game.i18n.localize('Close'),
+          callback: () => { }
+        }
+      },
+      render: function (h) {
+        h.find("#skills-radio input").change(function () {
+          let s = $(this).attr("data-skill");
+          h.find(".trait-list .hidden").removeClass("show");
+          let f = h.find(".trait-list ." + s);
+          f.addClass("show");
+          if (f.length == 0) {
+            h.find(".use-trait input").attr("disabled", "disabled").prop("checked", false);
+          } else
+            h.find(".use-trait input").attr("disabled", null);
+        });
+      }
+    });
+    ui.render(true);
+  }  

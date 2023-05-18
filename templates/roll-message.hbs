@@ -1,0 +1,26 @@
+<div class="ecryme-dv roll attribute">
+                <div class="dice-roll">
+                    <div class="dice-result">
+                        <div class="dice-formula">
+                           {{ ` + dicePool + `d6 }}
+                        </div>
+                        <div class="dice-tooltip expanded">
+                            <section class="tooltip-part flexrow">
+                              <div class="" style="flex:60%;">
+                                <div class="parameters">
+                                  {{ targetText }}
+                                </div>
+                                <div class="dice">
+                                    <ol class="dice-rolls">{{ diceString }}</ol>
+                                </div>
+                              </div>  
+                              <div class="align-center">
+                               Résultat
+                               <p style="font-weight:bold; font-size:2em;">{{ (total + skill + _trait + _usingSpecialization + _used).toString() }}</p>
+                              </div>
+                            </section>
+                        </div>` +
+                        `<h4 class="dice-total">{{ successText }}</h4>
+                    </div>
+                </div>
+            </div>

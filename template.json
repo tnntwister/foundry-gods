@@ -45,56 +45,56 @@
       },      
       "abilities": {
         "vig": {
-          "label":"TOTEM.abilities.vigor",
+          "label":"TOTEM.vigor_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "physical"
         },
         "vie": {
-          "label":"TOTEM.abilities.health",
+          "label":"TOTEM.health_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "physical"
         },
         "pre": {
-          "label":"TOTEM.abilities.precision",
+          "label":"TOTEM.precision_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "manual"
         },
         "ref": {
-          "label":"TOTEM.abilities.reflexes",
+          "label":"TOTEM.reflexes_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "manual"
         },
         "sav": {
-          "label":"TOTEM.abilities.knowledge",
+          "label":"TOTEM.knowledge_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "mental"
         },
         "per": {
-          "label":"TOTEM.abilities.perception",
+          "label":"TOTEM.perception_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "mental"
         },
         "vol": {
-          "label":"TOTEM.abilities.will",
+          "label":"TOTEM.will_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "social"
         },
         "emp": {
-          "label":"TOTEM.abilities.empathy",
+          "label":"TOTEM.empathy_ability",
           "value": 0,
           "min": 0,
           "max": 5,

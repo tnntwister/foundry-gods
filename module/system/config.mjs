@@ -7,11 +7,11 @@ export const TOTEM = {};
 
 
 TOTEM.SkillLevels = {
-  1:{ "label":"TOTEM.SkillLevel.beginner", "dicePool":1, "reroll":0},
-  2:{ "label":"TOTEM.SkillLevel.proficient", "dicePool":1, "reroll":1},
-  3:{ "label":"TOTEM.SkillLevel.expert", "dicePool":2, "reroll":1},
-  4:{ "label":"TOTEM.SkillLevel.master", "dicePool":2, "reroll":2},
-  5:{ "label":"TOTEM.SkillLevel.legend", "dicePool":3, "reroll":2},
+  1:{ "label":"TOTEM.skill_level.beginner", "dicePool":1, "reroll":0},
+  2:{ "label":"TOTEM.skill_level.proficient", "dicePool":1, "reroll":1},
+  3:{ "label":"TOTEM.skill_level.expert", "dicePool":2, "reroll":1},
+  4:{ "label":"TOTEM.skill_level.master", "dicePool":2, "reroll":2},
+  5:{ "label":"TOTEM.skill_level.legend", "dicePool":3, "reroll":2},
 }
 
 TOTEM.TotemNumbers = {
@@ -29,36 +29,36 @@ TOTEM.TotemNumbers = {
 
 TOTEM.abilityCategories = {
   "physical": {
-    "label":"TOTEM.abilityCategory.physical"
+    "label":"TOTEM.ability_category.physical"
   },
   "manual": {
-    "label":"TOTEM.abilityCategory.manual"
+    "label":"TOTEM.ability_category.manual"
   },
   "mental": {
-    "label":"TOTEM.abilityCategory.mental"
+    "label":"TOTEM.ability_category.mental"
   },
   "social": {
-    "label":"TOTEM.abilityCategory.social"
+    "label":"TOTEM.ability_category.social"
   }
 }
 
 TOTEM.skillCategories = {
   "man": {
-    "label":"TOTEM.skillCategory.man"
+    "label":"TOTEM.skill_category.man"
   },
   "animal": {
-    "label":"TOTEM.skillCategory.animal"
+    "label":"TOTEM.skill_category.animal"
   },
   "tool": {
-    "label":"TOTEM.skillCategory.machine"
+    "label":"TOTEM.skill_category.machine"
   },
   "weapon": {
-    "label":"TOTEM.skillCategory.weapon"
+    "label":"TOTEM.skill_category.weapon"
   },
   "survival": {
-    "label":"TOTEM.skillCategory.survival"
+    "label":"TOTEM.skill_category.survival"
   },
   "world": {
-    "label":"TOTEM.skillCategory.earth"
+    "label":"TOTEM.skill_category.earth"
   }
 }

@@ -12,6 +12,9 @@
     // "systems/totem/templates/actor/parts/actor-skills.html",
     "systems/totem/templates/actor/parts/actor-items.html",
     "systems/totem/templates/actor/parts/actor-effects.html",
+
+    // additional templates
+    "systems/totem/templates/roll.hbs",
   ]);
 };
 
