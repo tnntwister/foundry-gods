@@ -2,6 +2,9 @@
   "TOTEM.WorldSettings.GameMode.Name":"Choix du mode de jeu",
   "TOTEM.WorldSettings.GameMode.Hint":"À l’image de certains jeux vidéo proposant différents, Vermine 2047 permet aux joueurs de choisir leur Mode de jeu et de fixer eux-mêmes le degré de réalisme, de surnaturel et de dangerosité de l’univers.",
 
+  "TOTEM.roll_tool": "Lanceur de dés",
+  "TOTEM.roll_dice": "Jeter les dés",
+  
   "TOTEM.level": "Niveau",
   "TOTEM.pool": "Réserve",
   "TOTEM.pools": "Réserves",
@@ -12,11 +15,14 @@
   "TOTEM.ability":"Caractéristique",
   "TOTEM.skills_title":"Compétences",
   "TOTEM.skill_title":"Compétence",
+  "TOTEM.skill_mastery":"Maîtrise",
   "TOTEM.bonus":"Bonus",
   "TOTEM.penalty":"Malus",
   "TOTEM.reroll":"Relance",
   "TOTEM.specialty":"Spécialité",
-  "TOTEM.difficulty":"Difficulty",  
+  "TOTEM.difficulty":"Difficulté",  
+  "TOTEM.help":"Entraide",  
+  "TOTEM.tooling":"Matériel",  
   
 
   "TOTEM.vigor_ability":"Vigueur",

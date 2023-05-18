@@ -1,25 +1,41 @@
 <form id="dice-pool-form" class="ecryme-dv-form" data-actor-id="{{ speakerId }}">
   <div class="dice-pool flexcol">
     <div class="flexrow row">
-      <label class="label" style="flex: 80%;">{{localize 'TOTEM.skills_title'}}</label>
-      <input type="number" class="numeric-entry" style="text-align: center;" name="skill" id="skill" required min="0" max="10" {{#if skillScore}}value="{{ skillScore }}"{{/if}}> 
-    </div>
+      <label class="label" style="flex: 80%;">{{localize 'TOTEM.difficulty'}}</label>
+      <input style="text-align: center;" class="numeric-entry" type="number" name="difficulty" value="7" id="difficulty" min="3" max="10">
+    </div>   
     <div class="flexrow row">
       <label class="label" style="flex: 80%;">{{localize 'TOTEM.ability'}}</label>
-      <input type="number" class="numeric-entry" style="text-align: center;" name="trait" id="trait" min="-5" max="5" value="0">
+      <input type="number" class="numeric-entry" style="text-align: center;" name="ability" id="ability" min="1" max="5" value="2">
+    </div>
+    <div class="flexrow row">
+      <label class="label" style="flex: 80%;">{{localize 'TOTEM.skill_title'}}</label>
+      <input type="number" class="numeric-entry" style="text-align: center;" name="skill" id="skill" required min="0" max="5" {{#if skillScore}}value="{{ skillScore }}"{{else}}value="0"{{/if}}> 
+    </div>
+    <div class="flexrow row">
+      <label class="label">{{localize 'TOTEM.skill_mastery'}}</label>
+      <span style="flex: 80%;">{{localize 'TOTEM.bonus'}} :  / {{localize 'TOTEM.reroll'}} : </span>
     </div>
     <div class="flexrow row">
       <label class="label">{{localize 'TOTEM.specialty'}}</label>
-      <input type="checkbox" name="usingSpecialization" id="usingSpecialization" value="2" {{#if specialization}}checked{{/if}}>
+      <input type="checkbox" name="usingSpecialization" id="usingSpecialization" value="1" {{#if specialty}}checked{{/if}}>
     </div>
     <div class="flexrow row">
-      <label class="label" style="flex: 80%;">{{localize 'TOTEM.reroll'}}</label>
-      <input type="number" class="numeric-entry" style="text-align: center;" name="usure" id="usure" required min="0" max="{{#if skillScore}}{{ skillScore }}{{ else }}10{{/if}}" value="0"> 
+      <label class="label">{{localize 'TOTEM.help'}}</label>
+      <input type="checkbox" name="helped" id="helped" value="1" {{#if help}}checked{{/if}}>
     </div>
     <div class="flexrow row">
-      <label class="label" style="flex: 80%;">{{localize 'TOTEM.difficulty'}}</label>
-      <input style="text-align: center;" class="numeric-entry" type="number" name="difficulty" value="8" id="difficulty" min="6" max="18">
-    </div>   
+      <label class="label">{{localize 'TOTEM.tooling'}}</label>
+      <input type="checkbox" name="usingTools" id="usingTools" value="1" {{#if help}}checked{{/if}}>
+    </div>
+    <div class="flexrow row">
+      <label class="label" style="flex: 80%;">{{localize 'TOTEM.self_control'}}</label>
+      <input type="number" class="numeric-entry" style="text-align: center;" name="self_control" id="self_control" min="0" max="5" value="0">
+    </div>
+    <div class="flexrow row">
+      <label class="label" style="flex: 80%;">{{localize 'TOTEM.group'}}</label>
+      <input type="number" class="numeric-entry" style="text-align: center;" name="group" id="group" min="0" max="5" value="0">
+    </div>
   </div>    
   <p><input type="hidden" name="speakerId" value="{{ speakerId }}" />
     <input type="hidden" name="skillLabel" value="{{ skill }}" /></p>

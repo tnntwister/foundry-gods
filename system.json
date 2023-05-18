@@ -12,7 +12,7 @@
     "name": "Asacolips"
   }],
   "esmodules": ["module/totem.mjs"],
-  "styles": ["css/totem.css"],
+  "styles": ["css/style.css", "css/totem.css"],
   "scripts": [],
   "packs": [],
   "languages": [

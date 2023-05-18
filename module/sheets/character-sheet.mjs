@@ -222,7 +222,10 @@ export class TotemCharacterSheet extends TotemActorSheet {
         console.log($(element).attr('for'));
         const NoD = this.actor.system.skills[$(element).attr('for').split('.')[2]]?.value || 0
        return game.totem.TotemRoll.roll(this.actor.id, label, NoD, 0, {});*/
-       let data = {};
+       let data = { 
+          actorId: this.actor.id, 
+          label: game.i18n.localize(dataset.label)
+        };
        getRollBox(data);
        return true;
     }

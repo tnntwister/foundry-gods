@@ -5,7 +5,6 @@ export const TOTEM = {};
  * @type {Object}
  */
 
-
 TOTEM.SkillLevels = {
   1:{ "label":"TOTEM.skill_level.beginner", "dicePool":1, "reroll":0},
   2:{ "label":"TOTEM.skill_level.proficient", "dicePool":1, "reroll":1},

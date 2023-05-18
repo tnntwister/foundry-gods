@@ -38,47 +38,55 @@
   export const getRollBox = async function(data) {
     let html = await renderTemplate('systems/totem/templates/roll.hbs', data);
     let ui = new Dialog({
-      title: game.i18n.localize("TOTEM.RollTool"),
+      title: game.i18n.localize("TOTEM.roll_tool"),
       content: html,
       buttons: {
         roll: {
-          label: game.i18n.localize('TOTEM.RollDice'),
+          label: game.i18n.localize('TOTEM.roll_dice'),
           callback: (html) => {
             let form = html.find('#dice-pool-form');
             if (!form[0].checkValidity()) {
               throw "Invalid Data";
             }
-            let target = 0, trait, usingSpecialization, difficulty, skill = 0, params = {};
-            form.serializeArray().forEach(e => {
-              switch (e.name) {
-                case "difficulty":
-                  if (e.value != "")
-                    difficulty = -e.value;
-                  break;
-                case "skillLabel":
-                  params.skill = e.value;
-                  break;
-                case "usure":
-                  params.usure = +e.value;
-                  break;
-                case "skill":
-                    skill = +e.value;
-                    break;
-                case "trait":
-                  trait = +e.value;
-                  break;
-                case "usingSpecialization":
-                  if (e.value && +e.value > 1)
-                    usingSpecialization = +e.value;
-                  break;
-              }
-
-              // prise en compte de l'usure sur la feuille de perso
-              if (params.usure != undefined){
-                updateActorSkillScore(actor, data.skill, 'spent', data.skillSpent + parseInt(params.usure,10));
-              }
+            let formData = {};
+            form.serializeArray().map(item => {
+              formData[item.name] = item.value;
             });
-            return EcrymeRoll.get().performTest(data.dicePool, target, trait, usingSpecialization, difficulty, skill, params, actor);
+            console.log("roll form data", formData);
+            let NoD = parseInt(formData.ability,10);
+            let Reroll = 0;
+            // maîtrise bonus
+            if (formData.skill > 0 && formData.skill < 3){
+              NoD += 1;
+            } else if (formData.skill > 2 && formData.skill < 5){  
+              NoD += 2;
+            } else if (formData.skill > 4){    
+              NoD += 3;
+            }
+            // maîtrise relance
+            if (formData.skill > 1 && formData.skill < 4){
+              Reroll += 1;
+            } else if (formData.skill > 3){    
+              Reroll += 2;
+            }
+            // réserves
+            if (formData.self_control > 0){
+              NoD += parseInt(formData.self_control,10);
+            } 
+            if (formData.group > 0){
+              NoD += parseInt(formData.group,10);
+            } 
+            // checks
+            if (formData.usingSpecialization !== undefined && formData.usingSpecialization == 1){
+              NoD += 1;
+            }
+            if (formData.usingTools !== undefined && formData.usingTools == 1){
+              NoD += 1;
+            }
+            if (formData.helped !== undefined && formData.helped == 1){
+              NoD += 1;
+            }
+            return game.totem.TotemRoll.roll(data.actorId, data.label, NoD, Reroll, data);
           }
         },
         close: {
