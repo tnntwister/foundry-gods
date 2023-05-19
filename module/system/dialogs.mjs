@@ -52,9 +52,11 @@
             form.serializeArray().map(item => {
               formData[item.name] = item.value;
             });
-            console.log("roll form data", formData);
+            // console.log("roll form data", formData);
             let NoD = parseInt(formData.ability,10);
             let Reroll = 0;
+            // difficulty
+            data.difficulty = (formData.difficulty != undefined) ? formData.difficulty : 7; 
             // maîtrise bonus
             if (formData.skill > 0 && formData.skill < 3){
               NoD += 1;
