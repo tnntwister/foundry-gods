@@ -10,19 +10,21 @@ GODS.SkillLevels = {
   2:{ "label":"GODS.skill_level.proficient", "dicePool":1, "reroll":1},
   3:{ "label":"GODS.skill_level.expert", "dicePool":2, "reroll":1},
   4:{ "label":"GODS.skill_level.master", "dicePool":2, "reroll":2},
-  5:{ "label":"GODS.skill_level.legend", "dicePool":3, "reroll":2},
+  5:{ "label":"GODS.skill_level.archmaster", "dicePool":3, "reroll":2},
+  5:{ "label":"GODS.skill_level.legend", "dicePool":3, "reroll":3},
 }
 
-GODS.GodsNumbers = {
-  1:{ "label":"GODS.totems.human", "key":"human"},
-  2:{ "label":"GODS.totems.scavenger", "key":"scavenger"},
-  3:{ "label":"GODS.totems.symbiote", "key":"symbiote"},
-  4:{ "label":"GODS.totems.parasite", "key":"parasite"},
-  5:{ "label":"GODS.totems.builder", "key":"builder"},
-  6:{ "label":"GODS.totems.horde", "key":"horde"},
-  7:{ "label":"GODS.totems.hive", "key":"hive"},
-  8:{ "label":"GODS.totems.solitary", "key":"solitary"},
-  9:{ "label":"GODS.totems.adapted", "key":"adapted"}
+GODS.Instincts = {
+  1:{ "key":"architect"},
+  2:{ "key":"sword"},
+  3:{ "key":"flail"},
+  4:{ "key":"man"},
+  5:{ "key":"keeper"},
+  6:{ "key":"hand"},
+  7:{ "key":"mask"},
+  8:{ "key":"void"},
+  9:{ "key":"bone"},
+  0:{ "key":"traveller"}
 }
 
 
@@ -72,3 +74,19 @@ GODS.signs = {"wolf":"SIGNS.wolf.name","child": "SIGNS.child.name" ,
 "ship": "SIGNS.ship.name" ,
 "sword": "SIGNS.sword.name" ,
 "cat": "SIGNS.cat.name" }
+
+GODS.origins = {"aon":"Aon",
+"avhorae": "Avhorae" ,
+"babel": "Babel",
+"soleil_noir": "Empire du Soleil Noir",
+"fakhar": "Fakhar",
+"horde": "Horde",
+"khashan": "Khashan",
+"ool": "Ool",
+"shattered_kingdoms": "Royaumes divisés",
+"saeth": "Saeth",
+"tegee": "Tégée (Thalos)",
+"tuuhle": "Tuuhle",
+"vaelor": "Vaelor",
+"valdheim": "Valdheim"
+}

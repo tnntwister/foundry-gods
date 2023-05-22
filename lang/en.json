@@ -1,7 +1,11 @@
 {
   "GODS.WorldSettings.GameMode.Name":"Choix du mode de jeu",
   "GODS.WorldSettings.GameMode.Hint":"À l’image de certains jeux vidéo proposant différents, Vermine 2047 permet aux joueurs de choisir leur Mode de jeu et de fixer eux-mêmes le degré de réalisme, de surnaturel et de dangerosité de l’univers.",
-
+  "GAME_MODES": {
+    "heroic": { "name": "Héroique"},
+    "epic": { "name": "Epique"},
+    "legendary": { "name": "Légendaire"}
+  },
   "GODS.roll_tool": "Lanceur de dés",
   "GODS.roll_dice": "Jeter les dés",
   
@@ -51,6 +55,18 @@
   "GODS.skill_level.master": "Maître",
   "GODS.skill_level.legend": "Légende",
   
+  "INSTINCTS": {
+    "architect": { "name": "L'Architecte"},
+    "sword": { "name": "L'épée"},
+    "flail": { "name": "Le fléau"},
+    "man": { "name": "L'Homme"},
+    "keeper": { "name": "Le Gardien"},
+    "hand": { "name": "La Main"},
+    "mask": { "name": "Le Masque"},
+    "void": { "name": "Le Néant"},
+    "bone": { "name": "L'Os"},
+    "traveller": { "name": "Le Voyageur"}
+  },
   "GODS.instincts.human": "l'Humain",
   "GODS.instincts.scavenger": "le Prédateur",
   "GODS.instincts.symbiote": "le Symbiote",
@@ -72,7 +88,14 @@
   "GODS.skill_category.weapon": "L'Arme",
   "GODS.skill_category.survival": "Les Terres Sauvages",
   "GODS.skill_category.earth": "L'Inconnu",
-  
+  "SKILLS_CATEGORIES": {
+    "man": { "name": "L'Homme" },
+    "animal": { "name": "L'Animal" },
+    "machine": { "name": "L'Outil" },
+    "weapon": { "name": "L'Arme" },
+    "survival": { "name": "Les Terres Sauvages" },
+    "earth": { "name": "L'Inconnu" }
+  },
   "GODS.skills.arts":"Arts",
   "GODS.skills.civilization":"Civilisations",
   "GODS.skills.psychology":"Relationnel",
@@ -103,6 +126,38 @@
   "GODS.skills.myths":"Mythes",
   "GODS.skills.pantheons":"Panthéons",
   "GODS.skills.rituals":"Rituels",
+
+  "SKILLS": {
+    "arts": { "name": "Arts"},
+    "civilization": { "name": "Civilisations"},
+    "psychology": { "name": "Relationnel"},
+    "rumors": { "name": "Cité"},
+    "healing": { "name": "Soins"},
+    "animalism": { "name": "Animalisme"},
+    "riding": { "name": "Monture"},
+    "wildlife": { "name": "Faune"},
+    "territory": { "name": "Territoire"},
+    "tracks": { "name": "Pistage"},
+    "crafting": { "name": "Artisanat"},
+    "manipulation": { "name": "Adresse"},
+    "runes": { "name": "Runes"},
+    "armory": { "name": "Armurerie"},
+    "shield": { "name": "Bouclier"},
+    "close": { "name": "Corps-à-corps"},
+    "archery": { "name": "Tir"},
+    "throwing": { "name": "Lancer"},
+    "melee": { "name": "Mêlée"},
+    "atletics": { "name": "Atlétisme"},
+    "stealth": { "name": "Discrétion"},
+    "alertness": { "name": "Vigilance"},
+    "flora": { "name": "Flore"},
+    "road": { "name": "Voyage"},
+    "burst": { "name": "Eclat"},
+    "moons": { "name": "Lunes"},
+    "myths": { "name": "Mythes"},
+    "pantheons": { "name": "Panthéons"},
+    "rituals": { "name": "Rituels"}
+  },
 
   "GODS.sexes.male":"Masculin",
   "GODS.sexes.female":"Féminin",

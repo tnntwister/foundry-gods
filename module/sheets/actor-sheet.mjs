@@ -11,8 +11,8 @@ export class GodsActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["gods", "sheet", "actor"],
       template: "systems/gods-system/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
+      width: 690,
+      height: 800,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
     });
   }

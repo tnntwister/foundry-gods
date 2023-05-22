@@ -6,9 +6,9 @@ export const registerSettings = function () {
         config: true,
         type: String,
         choices: {
-        "1": "Survie",
-        "2": "Cauchemar",
-        "3": "Apocalypse"
+        "1": game.i18n.localize("GAME_MODES.heroic"),
+        "2": game.i18n.localize("GAME_MODES.epic"),
+        "3": game.i18n.localize("GAME_MODES.legendary")
         },
         default: 'e',
         onChange: value => {

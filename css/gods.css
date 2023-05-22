@@ -81,12 +81,16 @@ ul.unstyled li {
 }
 
 .actor.sheet aside {
-  background-image: url(/systems/gods-system/assets/images/ui/aside_background.webp), url(/systems/gods-system/assets/images/ui/gods_nav_down.webp);
-  background-repeat: no-repeat;
-  background-position: center calc(100% - 52px), center bottom;
-  background-size: 224px 100%, 224px 52px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.actor.sheet aside .sidebar {
+  background-image: url(/systems/gods-system/assets/images/ui/aside_background.webp);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 230px 518px;
 }
 
 .system-gods-system .char-header {
@@ -189,13 +193,10 @@ ul.unstyled li {
   min-height: 450px;
 }
 .system-gods-system .actor .sidebar {
-  float: left;
-  width: 220px;
+  width: 230px;
+  min-height:518px;
 }
-.system-gods-system .actor .content {
-  float: right;
-  width: calc(100% - 220px);
-}
+
 .system-gods-system .actor .floatright {
   float: right;
 }
