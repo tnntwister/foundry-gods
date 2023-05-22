@@ -10,6 +10,7 @@
     "systems/gods-system/templates/actor/parts/actor-spells.html",
     "systems/gods-system/templates/actor/parts/actor-features.html",
     "systems/gods-system/templates/actor/parts/actor-spells.html",
+    "systems/gods-system/templates/actor/parts/actor-id.hbs",
     "systems/gods-system/templates/actor/parts/actor-items.html",
     "systems/gods-system/templates/actor/parts/actor-effects.html",
 

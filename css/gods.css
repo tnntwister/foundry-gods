@@ -32,37 +32,37 @@ body.system-gods-system img#logo {
   /*color: #191813; */
 }
 
+.padding-with-frieze {
+  margin: 10px 23%;
+}
+
+.padding-with-frieze li {
+  max-width:100%;
+}
 
 /* ----------------------------------------- */
 /* Sheet Structure                           */
 /* ----------------------------------------- */
-.gods-system.actor .window-content {
-  padding: 5px;
-  font-size: var(--font-size-13);
+.system-gods-system .window-content {
+  background: url(/systems/gods-system/assets/images/ui/box_background.webp);
+  padding: 0;
   overflow-y: hidden;
 }
 
 .actor.sheet form {
   display: grid;
-  grid:
+  /*grid:
       "sidebar header" 75px
       "sidebar nav" minmax(min-content, max-content)
-      "sidebar content" 1fr/230px 1fr;
-  font-family: var(--body-serif);
-  background: url(/systems/gods-system/assets/images/ui/gods_navig_top.webp), url(/systems/gods-system/assets/images/ui/box_background.webp);
-  background-repeat: repeat-x, no-repeat;
-  background-size: auto 89px, cover;
+      "sidebar content" 1fr/230px 1fr;*/
+  grid-template-columns: minmax(230px,1fr) 3fr;    
+  background-repeat: no-repeat;
+  background-size:contain;
   background-attachment: local;
   height: 100%;
 }
 
 .actor.sheet aside {
-  grid-area: sidebar;
-  color: var(--sidebar-label);
-  font-family: var(--serif);
-  font-size: var(--font-size-10);
-  font-weight: 600;
-  margin-left: 8px;
   background-image: url(/systems/gods-system/assets/images/ui/aside_background.webp), url(/systems/gods-system/assets/images/ui/gods_nav_down.webp);
   background-repeat: no-repeat;
   background-position: center calc(100% - 52px), center bottom;
@@ -71,44 +71,37 @@ body.system-gods-system img#logo {
   flex-direction: column;
 }
 
-.gods-system.actor .sheet-header {
+.system-gods-system .char-header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   flex: 0 0 100%;
-  height: 48px;
+  height: 102px;
 }
-.gods-system.actor .sheet-header > * {
-  flex: 1;
-}
-.gods-system.actor .sheet-header h1 {
-  margin: 0;
-  border: none;
-}
-.gods-system.actor .sheet-header h1 > input {
-  font-family: var(--serif-condensed);
-  font-weight: 700;
-  height: 40px;
+.system-gods-system .char-level {
+  background: url(/systems/gods-system/assets/images/ui/gods_navig_top.webp);
+  height: 56px;
+  background-size: cover;
   width: 100%;
-  margin: 2px;
-  color: #444;
-  font-size: var(--font-size-36);
-  border: none;
+  display:flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
-.gods-system.actor .sheet-body {
+
+.system-gods-system .actor .sheet-body {
   height: calc(100% - 35px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.gods-system.actor form {
+.system-gods-system .actor form {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.gods-system.actor form input[type=text], .gods-system.actor form input[type=number] {
+.system-gods-system .actor form input[type=text], .system-gods-system .actor form input[type=number] {
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   background: none;
@@ -117,48 +110,48 @@ body.system-gods-system img#logo {
   color: #333;
   border: 1px solid transparent;
 }
-.gods-system.actor form input[type=text]:hover:not(:disabled), .gods-system.actor form input[type=text]:focus, .gods-system.actor form input[type=number]:hover:not(:disabled), .gods-system.actor form input[type=number]:focus {
+.system-gods-system .actor form input[type=text]:hover:not(:disabled), .system-gods-system .actor form input[type=text]:focus, .system-gods-system .actor form input[type=number]:hover:not(:disabled), .system-gods-system .actor form input[type=number]:focus {
   border: 1px solid black;
   box-shadow: 0 0 10px #00005a;
 }
-.gods-system.actor form select {
+.system-gods-system .actor form select {
   font-size: var(--font-size-10);
   height: 18px;
   background: rgba(255, 255, 255, 0.5);
 }
-.gods-system.actor form label {
+.system-gods-system .actor form label {
   display: block;
 }
-.gods-system.actor form .mce-panel span {
+.system-gods-system .actor form .mce-panel span {
   display: inherit;
 }
-.gods-system.actor form.editable .rollable:hover {
+.system-gods-system .actor form.editable .rollable:hover {
   color: #000;
   text-shadow: 0 0 10px #00005a;
   cursor: pointer;
 }
-.gods-system.actor form .sheet-tabs {
+.system-gods-system .actor form .sheet-tabs {
   font-weight: 500;
   height: 30px;
 }
-.gods-system.actor form .sheet-tabs > .list-row {
+.system-gods-system .actor form .sheet-tabs > .list-row {
   line-height: 24px;
   padding-top: 3px;
   font-size: var(--font-size-12);
   text-align: center;
 }
-.gods-system.actor form .sheet-tabs > .list-row:last-of-type {
+.system-gods-system .actor form .sheet-tabs > .list-row:last-of-type {
   padding-right: 4px;
 }
-.gods-system.actor form .sheet-tabs > .list-row.active {
+.system-gods-system .actor form .sheet-tabs > .list-row.active {
   color: #000;
   font-weight: 700;
 }
-.gods-system.actor form .tab {
+.system-gods-system .actor form .tab {
   flex: 1;
   overflow: hidden;
 }
-.gods-system.actor form .tag-legacy {
+.system-gods-system .actor form .tag-legacy {
   float: left;
   margin: 0 2px 2px 0;
   padding: 0 3px;
@@ -173,45 +166,35 @@ body.system-gods-system img#logo {
 /* ---------------------------------------- */
 /* Actor Sheet                              */
 /* ---------------------------------------- */
-.gods-system.actor {
+.system-gods-system .actor {
   min-width: 650px;
   min-height: 450px;
 }
-.gods-system.actor .sidebar {
+.system-gods-system .actor .sidebar {
   float: left;
   width: 220px;
 }
-.gods-system.actor .content {
+.system-gods-system .actor .content {
   float: right;
   width: calc(100% - 220px);
 }
-.gods-system.actor .floatright {
+.system-gods-system .actor .floatright {
   float: right;
 }
-.gods-system.actor .sheet-upper {
+.system-gods-system .actor .sheet-upper {
   height: 268px;
 }
-.gods-system.actor .sheet-upper .sheet-header {
+.system-gods-system .actor .sheet-upper .sheet-header {
   height: 48px;
 }
-.gods-system.actor .sheet-upper .sheet-profile, .gods-system.actor .sheet-upper .sheet-showcase {
+.system-gods-system .actor .sheet-upper .sheet-profile, .system-gods-system .actor .sheet-upper .sheet-showcase {
   height: 220px;
 }
-.gods-system.actor .sheet-navigation {
-  height: 32px;
-  /* width: 100%;
-   */
-  float: right;
-  width: calc(100% - 220px);
+
+.system-gods-system .actor .sheet-content {
+  padding:4px;
 }
-.gods-system.actor .sheet-lower {
-  width: 100%;
-  height: calc(100% - 48px);
-}
-.gods-system.actor .sheet-lower .sheet-content {
-  height: calc(100% - 32px);
-}
-.gods-system.actor .sheet-sidebar {
+.system-gods-system .actor .sheet-sidebar {
   height: calc(100% - 48px);
   display: flex;
   flex-direction: column;
@@ -219,32 +202,32 @@ body.system-gods-system img#logo {
   overflow-x: hidden;
   overflow-y: auto;
 }
-.gods-system.actor .sheet-sidebar > * {
+.system-gods-system .actor .sheet-sidebar > * {
   flex: 1;
 }
-.gods-system.actor .sheet-sidebar .sidebar-summary {
+.system-gods-system .actor .sheet-sidebar .sidebar-summary {
   overflow-y: hidden;
 }
-.gods-system.actor.npc-sheet .sheet-upper {
+.system-gods-system .actor.npc-sheet .sheet-upper {
   height: 220px;
 }
-.gods-system.actor.npc-sheet .sheet-upper .sheet-showcase {
+.system-gods-system .actor.npc-sheet .sheet-upper .sheet-showcase {
   height: 172px;
 }
-.gods-system.actor.npc-sheet .sheet-lower {
+.system-gods-system .actor.npc-sheet .sheet-lower {
   height: calc(100% - 220px - 32px);
 }
-.gods-system.actor.npc-sheet section.sheet-body {
+.system-gods-system .actor.npc-sheet section.sheet-body {
   height: calc(100% - 48px);
 }
-.gods-system.actor .sheet-navigation {
+.system-gods-system .actor .sheet-navigation {
   border-top: 1px solid var(--secondary-background);
   border-bottom: 1px solid var(--primary-background);
 }
-.gods-system.actor .sheet-navigation .sheet-tabs > .list-row {
+.system-gods-system .actor .sheet-navigation .sheet-tabs > .list-row {
   border-radius: 5px 5px 0 0;
 }
-.gods-system.actor .sheet-navigation .sheet-tabs > .list-row.active {
+.system-gods-system .actor .sheet-navigation .sheet-tabs > .list-row.active {
   border: 1px solid #666;
   border-bottom: none;
   /* box-shadow: 0 0 10px inset #ff6400;
@@ -253,32 +236,32 @@ body.system-gods-system img#logo {
   color: #fff;
   text-shadow: none;
 }
-.gods-system.actor .sheet-header {
+.system-gods-system .actor .sheet-header {
   border-bottom: 1px solid var(--primary-background);
 }
-.gods-system.actor .sheet-header h1 {
+.system-gods-system .actor .sheet-header h1 {
   margin: 0;
   border: none;
 }
-.gods-system.actor .sheet-header h1.charname {
+.system-gods-system .actor .sheet-header h1.charname {
   flex-basis: 50%;
 }
-.gods-system.actor .sheet-header .editsheet {
+.system-gods-system .actor .sheet-header .editsheet {
   flex: 3;
   font-size: 0.625rem;
   text-align: center;
   margin-top: 3px;
 }
-.gods-system.actor .sheet-header .charlevel {
+.system-gods-system .actor .sheet-header .charlevel {
   flex: 0 0 150px;
   display: flex;
   align-items: center;
   text-align: right;
 }
-.gods-system.actor .sheet-header .charlevel > * {
+.system-gods-system .actor .sheet-header .charlevel > * {
   flex: 1;
 }
-.gods-system.actor .sheet-header .charlevel .level {
+.system-gods-system .actor .sheet-header .charlevel .level {
   font-family: var(--serif-condensed);
   font-weight: 700;
   align-items: center;
@@ -286,19 +269,19 @@ body.system-gods-system img#logo {
   display: flex;
   justify-content: end;
 }
-.gods-system.actor .sheet-header .charlevel .level input {
+.system-gods-system .actor .sheet-header .charlevel .level input {
   flex-basis: 1.5rem;
   margin-left: 0.1em;
   text-align: center;
 }
-.gods-system.actor .sheet-header .charlevel .xpbar {
+.system-gods-system .actor .sheet-header .charlevel .xpbar {
   width: 100%;
   flex: 0 0 8px;
   background: #666;
   border: 1px solid #000;
   border-radius: 3px;
 }
-.gods-system.actor .sheet-header .charlevel .xpbar .bar {
+.system-gods-system .actor .sheet-header .charlevel .xpbar .bar {
   height: 4px;
   margin: 1px;
   display: block;
@@ -306,7 +289,7 @@ body.system-gods-system img#logo {
   border: 1px solid #000;
   border-radius: 2px;
 }
-.gods-system.actor .sheet-header .charlevel .experience {
+.system-gods-system .actor .sheet-header .charlevel .experience {
   flex: 0 0 16px;
   display: flex;
   flex-direction: row;
@@ -314,10 +297,10 @@ body.system-gods-system img#logo {
   justify-content: flex-start;
   justify-content: flex-end;
 }
-.gods-system.actor .sheet-header .charlevel .experience > * {
+.system-gods-system .actor .sheet-header .charlevel .experience > * {
   flex: 1;
 }
-.gods-system.actor .sheet-header .charlevel .experience > input[type=text], .gods-system.actor .sheet-header .charlevel .experience > input[type=number] {
+.system-gods-system .actor .sheet-header .charlevel .experience > input[type=text], .system-gods-system .actor .sheet-header .charlevel .experience > input[type=number] {
   flex: 1;
   text-align: right;
   height: 16px;
@@ -325,15 +308,16 @@ body.system-gods-system img#logo {
 
 .actor.sheet nav.sheet-navigation {
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  height: 20px;
+  height: 30px;
   background: var(--secondary);
   background: url(../assets/sheet/border-pattern.webp) repeat-x top, url(../assets/sheet/border-pattern.webp) repeat-x bottom, var(--secondary);
   transition: all 0.1s ease-out;
   box-shadow: 0 -1px 1px rgb(0 0 0 / 25%);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  width:95%;
   position: relative;
 }
 

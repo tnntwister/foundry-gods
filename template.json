@@ -19,7 +19,13 @@
           "max": 2
         },
         "instinct":0,
-        "activity": ""
+        "identity": {
+          "height": 0,
+          "weight": 0,
+          "sign": "",
+          "age": 15,
+          "origin": ""
+        }
       }
     },
     "character": {
@@ -400,7 +406,7 @@
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["item", "weapons", "defense", "ritual", "technique"],
     "templates": {
       "base": {
         "description": ""
