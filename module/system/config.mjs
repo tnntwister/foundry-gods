@@ -61,3 +61,14 @@ GODS.skillCategories = {
     "label":"GODS.skill_category.earth"
   }
 }
+
+GODS.sexes = {"male": "GODS.sexes.male", "female": "GODS.sexes.female"};
+
+GODS.signs = {"wolf":"SIGNS.wolf.name","child": "SIGNS.child.name" ,
+"tree": "SIGNS.tree.name" ,
+"specter": "SIGNS.specter.name" ,
+"whirlwind": "SIGNS.whirlwind.name" ,
+"vulture": "SIGNS.vulture.name" ,
+"ship": "SIGNS.ship.name" ,
+"sword": "SIGNS.sword.name" ,
+"cat": "SIGNS.cat.name" }

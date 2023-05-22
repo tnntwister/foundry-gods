@@ -1,4 +1,4 @@
-<ul class="padding-with-frieze">
+<ul class="padding-with-frieze unstyled">
       <li>
         <div class="flexrow flex-group-center items-center">
             <label for="system.identity.age" class="flexlarge align-left">Age</label>
@@ -22,21 +22,25 @@
       </li>   
 
         <li>
-        <div class="flexrow flex-group-center items-center">
+        <div class="flexcol flex-group-center items-center w-full">
             <label for="system.identity.gender" class="flexlarge align-left">Sexe</label>
-            <input type="string" name="system.identity.gender" value="{{ system.identity.gender }}" data-dtype="String"/> 
+            <select name="system.identity.gender" class="w-full">
+              {{selectOptions config.sexes selected=system.identity.gender localize=true}}
+            </select>
           </div>
       </li>   
       <li>
-        <div class="flexrow flex-group-center items-center">
+        <div class="flexcol flex-group-center items-center w-full">
             <label for="system.identity.sign" class="flexlarge align-left">Signe astro.</label>
-            <input type="string" name="system.identity.sign" value="{{ system.identity.sign }}" data-dtype="String"/> 
+            <select name="system.identity.sign" class="w-full">
+              {{selectOptions config.signs selected=system.identity.sign localize=true}}
+            </select>
           </div>
       </li>   
       <li>
-        <div class="flexrow flex-group-center items-center">
+        <div class="flexcol flex-group-center items-center  w-full">
             <label for="system.identity.origin" class="resource-label flexlarge align-left">Origine</label>
-            <input type="string" name="system.identity.origin" value="{{ system.identity.origin }}" data-dtype="String"/> 
+            <input type="string" name="system.identity.origin" value="{{ system.identity.origin }}" data-dtype="String" class=" w-full" /> 
           </div>
       </li>   
   </ul>

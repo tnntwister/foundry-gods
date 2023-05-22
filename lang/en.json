@@ -102,5 +102,47 @@
   "GODS.skills.moons":"Lunes",
   "GODS.skills.myths":"Mythes",
   "GODS.skills.pantheons":"Panthéons",
-  "GODS.skills.rituals":"Rituels"
+  "GODS.skills.rituals":"Rituels",
+
+  "GODS.sexes.male":"Masculin",
+  "GODS.sexes.female":"Féminin",
+
+  "SIGNS": {
+    "wolf":{
+      "name":"Le Loup",
+      "description":""
+    },
+    "child":{
+      "name":"L'Enfant",
+      "description":""
+    },
+    "tree":{
+      "name":"L'Arbre",
+      "description":""
+    },
+    "specter":{
+      "name":"Le Spectre",
+      "description":""
+    },
+    "whirlwind":{
+      "name":"Le Tourbillon",
+      "description":""
+    },
+    "vulture":{
+      "name":"Le Vautour",
+      "description":""
+    },
+    "ship":{
+      "name":"Le Navire",
+      "description":""
+    },
+    "sword":{
+      "name":"Le Glaive",
+      "description":""
+    },
+    "cat":{
+      "name":"Le Chat",
+      "description":""
+    }
+  }
 }
