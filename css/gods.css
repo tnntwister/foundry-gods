@@ -49,9 +49,9 @@ body.system-gods-system img#logo {
       "sidebar nav" minmax(min-content, max-content)
       "sidebar content" 1fr/230px 1fr;
   font-family: var(--body-serif);
-  background: url(/systems/gods-system/assets/images/ui/box_background.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(/systems/gods-system/assets/images/ui/gods_navig_top.webp), url(/systems/gods-system/assets/images/ui/box_background.webp);
+  background-repeat: repeat-x, no-repeat;
+  background-size: auto 89px, cover;
   background-attachment: local;
   height: 100%;
 }
@@ -321,4 +321,31 @@ body.system-gods-system img#logo {
   flex: 1;
   text-align: right;
   height: 16px;
+}
+
+.actor.sheet nav.sheet-navigation {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  background: var(--secondary);
+  background: url(../assets/sheet/border-pattern.webp) repeat-x top, url(../assets/sheet/border-pattern.webp) repeat-x bottom, var(--secondary);
+  transition: all 0.1s ease-out;
+  box-shadow: 0 -1px 1px rgb(0 0 0 / 25%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.actor.sheet nav.sheet-navigation .item {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.1s ease-out;
+  color: var(--tertiary);
+  fill: var(--tertiary);
+  background-image: url(../assets/sheet/nav-item-inactive.webp);
+  background-size: contain;
+  box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, 0.25);
 }
