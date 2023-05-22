@@ -18,10 +18,6 @@ body.system-gods-system img#logo {
   height:auto;
 }
 
-.sheet .window-content {
-  background: url(/systems/gods-system/assets/images/ui/box_background.webp) repeat;
-}
-
 /* Customize the chat roll area! */
 #chat-form textarea {
   background: url(/systems/gods-system/assets/images/ui/box_background.webp) repeat; 
@@ -36,3 +32,293 @@ body.system-gods-system img#logo {
   /*color: #191813; */
 }
 
+
+/* ----------------------------------------- */
+/* Sheet Structure                           */
+/* ----------------------------------------- */
+.gods-system.actor .window-content {
+  padding: 5px;
+  font-size: var(--font-size-13);
+  overflow-y: hidden;
+}
+
+.actor.sheet form {
+  display: grid;
+  grid:
+      "sidebar header" 75px
+      "sidebar nav" minmax(min-content, max-content)
+      "sidebar content" 1fr/230px 1fr;
+  font-family: var(--body-serif);
+  background: url(/systems/gods-system/assets/images/ui/box_background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: local;
+  height: 100%;
+}
+
+.actor.sheet aside {
+  grid-area: sidebar;
+  color: var(--sidebar-label);
+  font-family: var(--serif);
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  margin-left: 8px;
+  background-image: url(/systems/gods-system/assets/images/ui/aside_background.webp), url(/systems/gods-system/assets/images/ui/gods_nav_down.webp);
+  background-repeat: no-repeat;
+  background-position: center calc(100% - 52px), center bottom;
+  background-size: 224px 100%, 224px 52px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gods-system.actor .sheet-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex: 0 0 100%;
+  height: 48px;
+}
+.gods-system.actor .sheet-header > * {
+  flex: 1;
+}
+.gods-system.actor .sheet-header h1 {
+  margin: 0;
+  border: none;
+}
+.gods-system.actor .sheet-header h1 > input {
+  font-family: var(--serif-condensed);
+  font-weight: 700;
+  height: 40px;
+  width: 100%;
+  margin: 2px;
+  color: #444;
+  font-size: var(--font-size-36);
+  border: none;
+}
+.gods-system.actor .sheet-body {
+  height: calc(100% - 35px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.gods-system.actor form {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.gods-system.actor form input[type=text], .gods-system.actor form input[type=number] {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background: none;
+  padding: 0;
+  margin: 1px 0;
+  color: #333;
+  border: 1px solid transparent;
+}
+.gods-system.actor form input[type=text]:hover:not(:disabled), .gods-system.actor form input[type=text]:focus, .gods-system.actor form input[type=number]:hover:not(:disabled), .gods-system.actor form input[type=number]:focus {
+  border: 1px solid black;
+  box-shadow: 0 0 10px #00005a;
+}
+.gods-system.actor form select {
+  font-size: var(--font-size-10);
+  height: 18px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.gods-system.actor form label {
+  display: block;
+}
+.gods-system.actor form .mce-panel span {
+  display: inherit;
+}
+.gods-system.actor form.editable .rollable:hover {
+  color: #000;
+  text-shadow: 0 0 10px #00005a;
+  cursor: pointer;
+}
+.gods-system.actor form .sheet-tabs {
+  font-weight: 500;
+  height: 30px;
+}
+.gods-system.actor form .sheet-tabs > .list-row {
+  line-height: 24px;
+  padding-top: 3px;
+  font-size: var(--font-size-12);
+  text-align: center;
+}
+.gods-system.actor form .sheet-tabs > .list-row:last-of-type {
+  padding-right: 4px;
+}
+.gods-system.actor form .sheet-tabs > .list-row.active {
+  color: #000;
+  font-weight: 700;
+}
+.gods-system.actor form .tab {
+  flex: 1;
+  overflow: hidden;
+}
+.gods-system.actor form .tag-legacy {
+  float: left;
+  margin: 0 2px 2px 0;
+  padding: 0 3px;
+  font-size: var(--font-size-10);
+  line-height: 16px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  white-space: normal;
+  font-weight: 500;
+}
+
+/* ---------------------------------------- */
+/* Actor Sheet                              */
+/* ---------------------------------------- */
+.gods-system.actor {
+  min-width: 650px;
+  min-height: 450px;
+}
+.gods-system.actor .sidebar {
+  float: left;
+  width: 220px;
+}
+.gods-system.actor .content {
+  float: right;
+  width: calc(100% - 220px);
+}
+.gods-system.actor .floatright {
+  float: right;
+}
+.gods-system.actor .sheet-upper {
+  height: 268px;
+}
+.gods-system.actor .sheet-upper .sheet-header {
+  height: 48px;
+}
+.gods-system.actor .sheet-upper .sheet-profile, .gods-system.actor .sheet-upper .sheet-showcase {
+  height: 220px;
+}
+.gods-system.actor .sheet-navigation {
+  height: 32px;
+  /* width: 100%;
+   */
+  float: right;
+  width: calc(100% - 220px);
+}
+.gods-system.actor .sheet-lower {
+  width: 100%;
+  height: calc(100% - 48px);
+}
+.gods-system.actor .sheet-lower .sheet-content {
+  height: calc(100% - 32px);
+}
+.gods-system.actor .sheet-sidebar {
+  height: calc(100% - 48px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.gods-system.actor .sheet-sidebar > * {
+  flex: 1;
+}
+.gods-system.actor .sheet-sidebar .sidebar-summary {
+  overflow-y: hidden;
+}
+.gods-system.actor.npc-sheet .sheet-upper {
+  height: 220px;
+}
+.gods-system.actor.npc-sheet .sheet-upper .sheet-showcase {
+  height: 172px;
+}
+.gods-system.actor.npc-sheet .sheet-lower {
+  height: calc(100% - 220px - 32px);
+}
+.gods-system.actor.npc-sheet section.sheet-body {
+  height: calc(100% - 48px);
+}
+.gods-system.actor .sheet-navigation {
+  border-top: 1px solid var(--secondary-background);
+  border-bottom: 1px solid var(--primary-background);
+}
+.gods-system.actor .sheet-navigation .sheet-tabs > .list-row {
+  border-radius: 5px 5px 0 0;
+}
+.gods-system.actor .sheet-navigation .sheet-tabs > .list-row.active {
+  border: 1px solid #666;
+  border-bottom: none;
+  /* box-shadow: 0 0 10px inset #ff6400;
+   */
+  background: var(--primary-background);
+  color: #fff;
+  text-shadow: none;
+}
+.gods-system.actor .sheet-header {
+  border-bottom: 1px solid var(--primary-background);
+}
+.gods-system.actor .sheet-header h1 {
+  margin: 0;
+  border: none;
+}
+.gods-system.actor .sheet-header h1.charname {
+  flex-basis: 50%;
+}
+.gods-system.actor .sheet-header .editsheet {
+  flex: 3;
+  font-size: 0.625rem;
+  text-align: center;
+  margin-top: 3px;
+}
+.gods-system.actor .sheet-header .charlevel {
+  flex: 0 0 150px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+.gods-system.actor .sheet-header .charlevel > * {
+  flex: 1;
+}
+.gods-system.actor .sheet-header .charlevel .level {
+  font-family: var(--serif-condensed);
+  font-weight: 700;
+  align-items: center;
+  color: #444;
+  display: flex;
+  justify-content: end;
+}
+.gods-system.actor .sheet-header .charlevel .level input {
+  flex-basis: 1.5rem;
+  margin-left: 0.1em;
+  text-align: center;
+}
+.gods-system.actor .sheet-header .charlevel .xpbar {
+  width: 100%;
+  flex: 0 0 8px;
+  background: #666;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.gods-system.actor .sheet-header .charlevel .xpbar .bar {
+  height: 4px;
+  margin: 1px;
+  display: block;
+  background: #afebff;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.gods-system.actor .sheet-header .charlevel .experience {
+  flex: 0 0 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  justify-content: flex-end;
+}
+.gods-system.actor .sheet-header .charlevel .experience > * {
+  flex: 1;
+}
+.gods-system.actor .sheet-header .charlevel .experience > input[type=text], .gods-system.actor .sheet-header .charlevel .experience > input[type=number] {
+  flex: 1;
+  text-align: right;
+  height: 16px;
+}

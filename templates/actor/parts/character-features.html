@@ -1,0 +1,33 @@
+<h3>Caractéristiques</h3>
+      <section class="grid grid-4col">
+        {{#each config.abilityCategories as |abilityCategory ackey|}}
+          <div>
+            <h4 class="align-center">{{ localize abilityCategory.label }}</h4>
+            {{#each @root.system.abilities as |ability key|}}
+              {{#ife ability.category ackey }}
+                <div class="ability flexcol flex-group-center items-center">
+                  <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ability.label}}">{{ability.label}}</label>
+                  <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+                </div>
+              {{/ife}}
+            {{/each}}
+          </div>
+        {{/each}}
+      </section>
+      <h3>Compétences</h3>
+          <div class="grid grid-cols-3">
+          {{#each config.skillCategories as |skillCategory sckey|}}
+              <div class="col">
+                <h4>{{ localize skillCategory.label }}</h4>
+              {{#each @root.system.skills as |skill skey|}}
+              
+              {{#ife skill.category sckey }}                       
+                <div class="ability flexrow flex-group-center">
+                  <label style="flex:80%;" for="system.skills.{{skey}}.value" class="resource-label rollable flexlarge align-left" data-roll="+@skills.{{skey}}d10" data-label="{{skill.label}}">{{ localize skill.label}}  ({{skill.rarity}})</label>
+                  <input type="text" name="system.skills.{{skey}}.value" value="{{skill.value}}" data-dtype="Number"/>
+                </div>
+                {{/ife}}
+              {{/each}}
+              </div>
+          {{/each}}
+        </div>
