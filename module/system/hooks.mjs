@@ -5,19 +5,19 @@ export const registerHooks = function () {
      */
 
     Hooks.once("ready", async () => {
-        console.info("Totem | System Initialized.");
+        console.info("Gods | System Initialized.");
     });
 
-    // changement de la pause 
-    /*Hooks.on("renderPause", async function () {
+    Hooks.on("renderPause", async function () {
         if ($("#pause").attr("class") !== "paused") return;
-        $(".paused img").attr("src", 'systems/totem/assets/images/ui/vermine_pause.webp');
+        $(".paused img").attr("src", 'systems/gods-system/assets/images/ui/gods_pause2.webp');
+        // $(".paused img").css({ "opacity": 1, "height":"90px", "width":"250px", "left": "calc(50% - 125px)", "top":"0", "--fa-animation-duration":"60s"}); // pour la pause avec l'épée
         $(".paused img").css({ "opacity": 1});
-        $("#pause.paused figcaption").text("Communauté endormie...");
-    });*/
+        $("#pause.paused figcaption").text("");
+    });
 
-    // Hooks.on('renderChatLog', (log, html, data) => TotemFight.chatListeners(html));
-    // Hooks.on('renderChatMessage', (message, html, data) => TotemFight.chatMessageHandler(message, html, data));
+    // Hooks.on('renderChatLog', (log, html, data) => GodsFight.chatListeners(html));
+    // Hooks.on('renderChatMessage', (message, html, data) => GodsFight.chatMessageHandler(message, html, data));
 
     /**
      * Create a macro when dropping an entity on the hotbar
@@ -35,11 +35,11 @@ export const registerHooks = function () {
     Hooks.on('getSceneControlButtons', (controls) => {
         /*controls.find((c) => c.name === 'token').tools.push({
         name: 'Dice Roller',
-        title: game.i18n.localize("TOTEM.RollTool"),
+        title: game.i18n.localize("GODS.RollTool"),
         icon: 'fas fa-dice-d6',
         button: true,
         onClick() {
-            TotemRoll.ui();
+            GodsRoll.ui();
         }
         });*/
     });
@@ -51,15 +51,15 @@ export const registerHooks = function () {
     Hooks.on("preCreateActor", function (actor) {
         // console.log('pre create actor', actor);
         if (actor.img == "icons/svg/mystery-man.svg") {
-        // actor.updateSource({"img": `systems/totem/icons/actors/${actor.type}.webp`});
-        // item.updateSource({"img": `systems/totem/icons/competence.webp`});
+        // actor.updateSource({"img": `systems/gods-system/icons/actors/${actor.type}.webp`});
+        // item.updateSource({"img": `systems/gods-system/icons/competence.webp`});
         }
     });
     
     Hooks.on("preCreateItem", function (item) {
         if (item.img == "icons/svg/item-bag.svg") {
-        item.updateSource({"img": `systems/totem/icons/items/${item.type}.webp`});
-        // item.updateSource({"img": `systems/totem/icons/competence.webp`});
+        item.updateSource({"img": `systems/gods-system/icons/items/${item.type}.webp`});
+        // item.updateSource({"img": `systems/gods-system/icons/competence.webp`});
         }
     });
     
@@ -98,7 +98,7 @@ export const registerHooks = function () {
           },
           shouldDisplayToChat: false,
           iconClass: "fa-dice-d6",
-          description: "Roll Totem check"
+          description: "Roll Gods check"
         }));
       });*/
   

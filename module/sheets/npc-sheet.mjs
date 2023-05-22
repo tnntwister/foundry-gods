@@ -1,17 +1,17 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../system/effects.mjs";
-import { TotemActorSheet } from "./actor-sheet.mjs";
+import { GodsActorSheet } from "./actor-sheet.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
- * @extends {TotemActorSheet}
+ * @extends {GodsActorSheet}
  */
-export class TotemNpcSheet extends TotemActorSheet {
+export class GodsNpcSheet extends GodsActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["totem", "sheet", "actor"],
-      template: "systems/totem/templates/actor/actor-sheet.html",
+      classes: ["gods", "sheet", "actor"],
+      template: "systems/gods-system/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -20,7 +20,7 @@ export class TotemNpcSheet extends TotemActorSheet {
 
   /** @override */
   get template() {
-    return `systems/totem/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/gods-system/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -39,7 +39,7 @@ export class TotemNpcSheet extends TotemActorSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
-    context.config = CONFIG.TOTEM;
+    context.config = CONFIG.GODS;
     
     // Prepare character data and items.
     if (actorData.type == 'character') {

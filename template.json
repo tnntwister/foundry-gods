@@ -13,7 +13,7 @@
           "min": 0,
           "max": 2
         },
-        "totem":0,
+        "instinct":0,
         "activity": ""
       }
     },
@@ -21,23 +21,23 @@
       "templates": ["base"],
       "attributes": {
         "level": {
-          "label":"TOTEM.level",
+          "label":"GODS.level",
           "value": 1
         },
         "self_control": {
-          "label":"TOTEM.self_control",
+          "label":"GODS.self_control",
           "value": 0,
           "min": 0,
           "max": 5
         },
         "effort": {
-          "label":"TOTEM.effort",
+          "label":"GODS.effort",
           "value": 0, 
           "min": 0,
           "max": 5
         },
         "group": {
-          "label":"TOTEM.group",
+          "label":"GODS.group",
           "value": 0,
           "min": 0,
           "max": 5
@@ -45,56 +45,56 @@
       },      
       "abilities": {
         "vig": {
-          "label":"TOTEM.vigor_ability",
+          "label":"GODS.vigor_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "physical"
         },
         "vie": {
-          "label":"TOTEM.health_ability",
+          "label":"GODS.health_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "physical"
         },
         "pre": {
-          "label":"TOTEM.precision_ability",
+          "label":"GODS.precision_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "manual"
         },
         "ref": {
-          "label":"TOTEM.reflexes_ability",
+          "label":"GODS.reflexes_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "manual"
         },
         "sav": {
-          "label":"TOTEM.knowledge_ability",
+          "label":"GODS.knowledge_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "mental"
         },
         "per": {
-          "label":"TOTEM.perception_ability",
+          "label":"GODS.perception_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "mental"
         },
         "vol": {
-          "label":"TOTEM.will_ability",
+          "label":"GODS.will_ability",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "social"
         },
         "emp": {
-          "label":"TOTEM.empathy_ability",
+          "label":"GODS.empathy_ability",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -103,7 +103,7 @@
       },
       "skills": {
         "arts": {
-          "label":"TOTEM.skills.arts",
+          "label":"GODS.skills.arts",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -111,7 +111,7 @@
           "rarity":1
         },
         "civilization": {
-          "label":"TOTEM.skills.civilization",
+          "label":"GODS.skills.civilization",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -119,7 +119,7 @@
           "rarity":2
         },
         "psychology": {
-          "label":"TOTEM.skills.psychology",
+          "label":"GODS.skills.psychology",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -127,7 +127,7 @@
           "rarity":1
         },
         "rumors": {
-          "label":"TOTEM.skills.rumors",
+          "label":"GODS.skills.rumors",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -135,7 +135,7 @@
           "rarity":0
         },
         "healing": {
-          "label":"TOTEM.skills.healing",
+          "label":"GODS.skills.healing",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -143,7 +143,7 @@
           "rarity":1
         },
         "animalism": {
-          "label":"TOTEM.skills.animalism",
+          "label":"GODS.skills.animalism",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -151,7 +151,7 @@
           "rarity":1
         },
         "dissection": {
-          "label":"TOTEM.skills.dissection",
+          "label":"GODS.skills.dissection",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -159,7 +159,7 @@
           "rarity":2
         },
         "wildlife": {
-          "label":"TOTEM.skills.wildlife",
+          "label":"GODS.skills.wildlife",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -167,7 +167,7 @@
           "rarity":1
         },
         "repulsion": {
-          "label":"TOTEM.skills.repulsion",
+          "label":"GODS.skills.repulsion",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -175,7 +175,7 @@
           "rarity":0
         },
         "tracks": {
-          "label":"TOTEM.skills.tracks",
+          "label":"GODS.skills.tracks",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -183,7 +183,7 @@
           "rarity":0
         },
         "crafting": {
-          "label":"TOTEM.skills.crafting",
+          "label":"GODS.skills.crafting",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -191,7 +191,7 @@
           "rarity":2
         },
         "diy": {
-          "label":"TOTEM.skills.diy",
+          "label":"GODS.skills.diy",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -199,7 +199,7 @@
           "rarity":0
         },
         "mecanical": {
-          "label":"TOTEM.skills.mecanical",
+          "label":"GODS.skills.mecanical",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -207,7 +207,7 @@
           "rarity":2
         },
         "driving": {
-          "label":"TOTEM.skills.driving",
+          "label":"GODS.skills.driving",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -215,7 +215,7 @@
           "rarity":1
         },
         "technology": {
-          "label":"TOTEM.skills.technology",
+          "label":"GODS.skills.technology",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -223,7 +223,7 @@
           "rarity":2
         },
         "firearms": {
-          "label":"TOTEM.skills.firearms",
+          "label":"GODS.skills.firearms",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -231,7 +231,7 @@
           "rarity":2
         },
         "archery": {
-          "label":"TOTEM.skills.archery",
+          "label":"GODS.skills.archery",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -239,7 +239,7 @@
           "rarity":0
         },
         "armory": {
-          "label":"TOTEM.skills.armory",
+          "label":"GODS.skills.armory",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -247,7 +247,7 @@
           "rarity":2
         },
         "throwing": {
-          "label":"TOTEM.skills.throwing",
+          "label":"GODS.skills.throwing",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -255,7 +255,7 @@
           "rarity":0
         },
         "melee": {
-          "label":"TOTEM.skills.melee",
+          "label":"GODS.skills.melee",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -263,7 +263,7 @@
           "rarity":0
         },
         "feed": {
-          "label":"TOTEM.skills.feed",
+          "label":"GODS.skills.feed",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -271,7 +271,7 @@
           "rarity":0
         },
         "atletics": {
-          "label":"TOTEM.skills.atletics",
+          "label":"GODS.skills.atletics",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -279,7 +279,7 @@
           "rarity":0
         },
         "brawling": {
-          "label":"TOTEM.skills.brawling",
+          "label":"GODS.skills.brawling",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -287,7 +287,7 @@
           "rarity":0
         },
         "stealth": {
-          "label":"TOTEM.skills.stealth",
+          "label":"GODS.skills.stealth",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -295,7 +295,7 @@
           "rarity":0
         },
         "alertness": {
-          "label":"TOTEM.skills.alertness",
+          "label":"GODS.skills.alertness",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -303,7 +303,7 @@
           "rarity":0
         },
         "environment": {
-          "label":"TOTEM.skills.environment",
+          "label":"GODS.skills.environment",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -311,7 +311,7 @@
           "rarity":0
         },
         "flora": {
-          "label":"TOTEM.skills.flora",
+          "label":"GODS.skills.flora",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -319,7 +319,7 @@
           "rarity":0
         },
         "road": {
-          "label":"TOTEM.skills.road",
+          "label":"GODS.skills.road",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -327,7 +327,7 @@
           "rarity":0
         },
         "toxics": {
-          "label":"TOTEM.skills.toxics",
+          "label":"GODS.skills.toxics",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -335,7 +335,7 @@
           "rarity":0
         },
         "remains": {
-          "label":"TOTEM.skills.remains",
+          "label":"GODS.skills.remains",
           "value": 0,
           "min": 0,
           "max": 5,

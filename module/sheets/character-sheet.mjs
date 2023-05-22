@@ -1,18 +1,18 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../system/effects.mjs";
-import { TotemActorSheet } from "./actor-sheet.mjs";
+import { GodsActorSheet } from "./actor-sheet.mjs";
 import { getRollBox } from "../system/dialogs.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
- * @extends {TotemActorSheet}
+ * @extends {GodsActorSheet}
  */
-export class TotemCharacterSheet extends TotemActorSheet {
+export class GodsCharacterSheet extends GodsActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["totem", "sheet", "actor"],
-      template: "systems/totem/templates/actor/actor-sheet.html",
+      classes: ["gods", "sheet", "actor"],
+      template: "systems/gods-system/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -21,7 +21,7 @@ export class TotemCharacterSheet extends TotemActorSheet {
 
   /** @override */
   get template() {
-    return `systems/totem/templates/actor/actor-character-sheet.html`;
+    return `systems/gods-system/templates/actor/actor-character-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -40,7 +40,7 @@ export class TotemCharacterSheet extends TotemActorSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
-    context.config = CONFIG.TOTEM;
+    context.config = CONFIG.GODS;
     
     // Prepare character data and items.
     if (actorData.type == 'character') {
@@ -221,7 +221,7 @@ export class TotemCharacterSheet extends TotemActorSheet {
         /*const label = game.i18n.localize(dataset.label) ? `[ability] ${game.i18n.localize(dataset.label)}` : '';
         console.log($(element).attr('for'));
         const NoD = this.actor.system.skills[$(element).attr('for').split('.')[2]]?.value || 0
-       return game.totem.TotemRoll.roll(this.actor.id, label, NoD, 0, {});*/
+       return game.gods.GodsRoll.roll(this.actor.id, label, NoD, 0, {});*/
        let data = { 
           actorId: this.actor.id, 
           label: game.i18n.localize(dataset.label)

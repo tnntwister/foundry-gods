@@ -1,8 +1,8 @@
-import { TotemActor } from "./actor.mjs";
+import { GodsActor } from "./actor.mjs";
 /**
- * @extends {TotemActor}
+ * @extends {GodsActor}
  */
-export class TotemCharacter extends TotemActor {
+export class GodsCharacter extends GodsActor {
 
   /** @override */
   prepareData() {
@@ -31,7 +31,7 @@ export class TotemCharacter extends TotemActor {
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
-    const flags = actorData.flags.totem || {};
+    const flags = actorData.flags.gods || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.

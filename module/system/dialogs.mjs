@@ -36,13 +36,13 @@
   }
 
   export const getRollBox = async function(data) {
-    let html = await renderTemplate('systems/totem/templates/roll.hbs', data);
+    let html = await renderTemplate('systems/gods-system/templates/roll.hbs', data);
     let ui = new Dialog({
-      title: game.i18n.localize("TOTEM.roll_tool"),
+      title: game.i18n.localize("GODS.roll_tool"),
       content: html,
       buttons: {
         roll: {
-          label: game.i18n.localize('TOTEM.roll_dice'),
+          label: game.i18n.localize('GODS.roll_dice'),
           callback: (html) => {
             let form = html.find('#dice-pool-form');
             if (!form[0].checkValidity()) {
@@ -88,7 +88,7 @@
             if (formData.helped !== undefined && formData.helped == 1){
               NoD += 1;
             }
-            return game.totem.TotemRoll.roll(data.actorId, data.label, NoD, Reroll, data);
+            return game.gods.GodsRoll.roll(data.actorId, data.label, NoD, Reroll, data);
           }
         },
         close: {

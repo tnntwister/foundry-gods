@@ -4,13 +4,13 @@ import {onManageActiveEffect, prepareActiveEffectCategories} from "../system/eff
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class TotemActorSheet extends ActorSheet {
+export class GodsActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["totem", "sheet", "actor"],
-      template: "systems/totem/templates/actor/actor-sheet.html",
+      classes: ["gods", "sheet", "actor"],
+      template: "systems/gods-system/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -19,7 +19,7 @@ export class TotemActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/totem/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/gods-system/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -38,7 +38,7 @@ export class TotemActorSheet extends ActorSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
-    context.config = CONFIG.TOTEM;
+    context.config = CONFIG.GODS;
     
     // Prepare character data and items.
     if (actorData.type == 'character') {

@@ -1,9 +1,9 @@
-import { TotemActor } from "./actor.mjs";
+import { GodsActor } from "./actor.mjs";
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
- * @extends {TotemActor}
+ * @extends {GodsActor}
  */
-export class TotemNpc extends TotemActor {
+export class GodsNpc extends GodsActor {
 
   /** @override */
   prepareData() {
@@ -32,7 +32,7 @@ export class TotemNpc extends TotemActor {
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
-    const flags = actorData.flags.totem || {};
+    const flags = actorData.flags.gods || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.

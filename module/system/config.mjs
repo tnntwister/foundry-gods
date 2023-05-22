@@ -1,63 +1,63 @@
-export const TOTEM = {};
+export const GODS = {};
 
 /**
  * The set of Ability Scores used within the sytem.
  * @type {Object}
  */
 
-TOTEM.SkillLevels = {
-  1:{ "label":"TOTEM.skill_level.beginner", "dicePool":1, "reroll":0},
-  2:{ "label":"TOTEM.skill_level.proficient", "dicePool":1, "reroll":1},
-  3:{ "label":"TOTEM.skill_level.expert", "dicePool":2, "reroll":1},
-  4:{ "label":"TOTEM.skill_level.master", "dicePool":2, "reroll":2},
-  5:{ "label":"TOTEM.skill_level.legend", "dicePool":3, "reroll":2},
+GODS.SkillLevels = {
+  1:{ "label":"GODS.skill_level.beginner", "dicePool":1, "reroll":0},
+  2:{ "label":"GODS.skill_level.proficient", "dicePool":1, "reroll":1},
+  3:{ "label":"GODS.skill_level.expert", "dicePool":2, "reroll":1},
+  4:{ "label":"GODS.skill_level.master", "dicePool":2, "reroll":2},
+  5:{ "label":"GODS.skill_level.legend", "dicePool":3, "reroll":2},
 }
 
-TOTEM.TotemNumbers = {
-  1:{ "label":"TOTEM.totems.human", "key":"human"},
-  2:{ "label":"TOTEM.totems.scavenger", "key":"scavenger"},
-  3:{ "label":"TOTEM.totems.symbiote", "key":"symbiote"},
-  4:{ "label":"TOTEM.totems.parasite", "key":"parasite"},
-  5:{ "label":"TOTEM.totems.builder", "key":"builder"},
-  6:{ "label":"TOTEM.totems.horde", "key":"horde"},
-  7:{ "label":"TOTEM.totems.hive", "key":"hive"},
-  8:{ "label":"TOTEM.totems.solitary", "key":"solitary"},
-  9:{ "label":"TOTEM.totems.adapted", "key":"adapted"}
+GODS.GodsNumbers = {
+  1:{ "label":"GODS.totems.human", "key":"human"},
+  2:{ "label":"GODS.totems.scavenger", "key":"scavenger"},
+  3:{ "label":"GODS.totems.symbiote", "key":"symbiote"},
+  4:{ "label":"GODS.totems.parasite", "key":"parasite"},
+  5:{ "label":"GODS.totems.builder", "key":"builder"},
+  6:{ "label":"GODS.totems.horde", "key":"horde"},
+  7:{ "label":"GODS.totems.hive", "key":"hive"},
+  8:{ "label":"GODS.totems.solitary", "key":"solitary"},
+  9:{ "label":"GODS.totems.adapted", "key":"adapted"}
 }
 
 
-TOTEM.abilityCategories = {
+GODS.abilityCategories = {
   "physical": {
-    "label":"TOTEM.ability_category.physical"
+    "label":"GODS.ability_category.physical"
   },
   "manual": {
-    "label":"TOTEM.ability_category.manual"
+    "label":"GODS.ability_category.manual"
   },
   "mental": {
-    "label":"TOTEM.ability_category.mental"
+    "label":"GODS.ability_category.mental"
   },
   "social": {
-    "label":"TOTEM.ability_category.social"
+    "label":"GODS.ability_category.social"
   }
 }
 
-TOTEM.skillCategories = {
+GODS.skillCategories = {
   "man": {
-    "label":"TOTEM.skill_category.man"
+    "label":"GODS.skill_category.man"
   },
   "animal": {
-    "label":"TOTEM.skill_category.animal"
+    "label":"GODS.skill_category.animal"
   },
   "tool": {
-    "label":"TOTEM.skill_category.machine"
+    "label":"GODS.skill_category.machine"
   },
   "weapon": {
-    "label":"TOTEM.skill_category.weapon"
+    "label":"GODS.skill_category.weapon"
   },
   "survival": {
-    "label":"TOTEM.skill_category.survival"
+    "label":"GODS.skill_category.survival"
   },
   "world": {
-    "label":"TOTEM.skill_category.earth"
+    "label":"GODS.skill_category.earth"
   }
 }

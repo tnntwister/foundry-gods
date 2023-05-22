@@ -2,24 +2,24 @@ import { registerHooks } from "./system/hooks.mjs";
 import { registerSettings } from "./system/settings.mjs";
 
 // Import document classes.
-import { TotemActor } from "./documents/actor.mjs";
-import { TotemCharacter } from "./documents/character.mjs";
-import { TotemNpc } from "./documents/npc.mjs";
-import { TotemCreature } from "./documents/creature.mjs";
+import { GodsActor } from "./documents/actor.mjs";
+import { GodsCharacter } from "./documents/character.mjs";
+import { GodsNpc } from "./documents/npc.mjs";
+import { GodsCreature } from "./documents/creature.mjs";
 
-import { TotemCharacterSheet } from "./sheets/character-sheet.mjs";
-import { TotemNpcSheet } from "./sheets/npc-sheet.mjs";
-import { TotemCreatureSheet } from "./sheets/creature-sheet.mjs";
+import { GodsCharacterSheet } from "./sheets/character-sheet.mjs";
+import { GodsNpcSheet } from "./sheets/npc-sheet.mjs";
+import { GodsCreatureSheet } from "./sheets/creature-sheet.mjs";
 
-import { TotemItem } from "./documents/item.mjs";
-import { TotemItemSheet } from "./sheets/item-sheet.mjs";
+import { GodsItem } from "./documents/item.mjs";
+import { GodsItemSheet } from "./sheets/item-sheet.mjs";
 
-import { TotemRoll } from "./system/roll.mjs";
-import { TotemCombat } from "./system/fight.mjs";
+import { GodsRoll } from "./system/roll.mjs";
+import { GodsCombat } from "./system/fight.mjs";
 
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates, registerHandlebarsHelpers } from "./system/handlebars-manager.mjs";
-import { TOTEM } from "./system/config.mjs";
+import { GODS } from "./system/config.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -29,17 +29,17 @@ Hooks.once('init', async function() {
 
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.totem = {
-    TotemCharacter,
-    TotemNpc,
-    TotemCreature,
-    TotemItem,
-    TotemRoll,
-    TotemCombat
+  game.gods = {
+    GodsCharacter,
+    GodsNpc,
+    GodsCreature,
+    GodsItem,
+    GodsRoll,
+    GodsCombat
   };
 
   // Add custom constants for configuration.
-  CONFIG.TOTEM = TOTEM;
+  CONFIG.GODS = GODS;
 
   /**
    * Set an initiative formula for the system
@@ -51,27 +51,27 @@ Hooks.once('init', async function() {
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = TotemActor;
-  CONFIG.Item.documentClass = TotemItem;
+  CONFIG.Actor.documentClass = GodsActor;
+  CONFIG.Item.documentClass = GodsItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet('totem', TotemCharacterSheet, {
+  Actors.registerSheet('gods', GodsCharacterSheet, {
       types: ['character'],
       makeDefault: true,
     });
 
-  Actors.registerSheet('totem', TotemNpcSheet, {
+  Actors.registerSheet('gods', GodsNpcSheet, {
       types: ['npc'],
       makeDefault: true,
     });
 
-  Actors.registerSheet('totem', TotemCreatureSheet, {
+  Actors.registerSheet('gods', GodsCreatureSheet, {
     types: ['creature'],
     makeDefault: true,
   }); // Register vehicle Sheet
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("totem", TotemItemSheet, { makeDefault: true });
+  Items.registerSheet("gods", GodsItemSheet, { makeDefault: true });
 
   registerHandlebarsHelpers(); // Register Handlebars helpers
   registerHooks(); // register Hooks

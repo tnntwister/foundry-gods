@@ -1,4 +1,4 @@
-export class TotemRoll {
+export class GodsRoll {
 
     static roll(actorId, label, NoD, Reroll = 0, params = {}){        
         const actor = game.actors.get(actorId);

@@ -223,17 +223,17 @@
   text-align: center;
 }
 
-/* Styles limited to totem sheets */
-.totem {
+/* Styles limited to gods sheets */
+.gods {
   /* ----------------------------------------- */
   /*  Items Lists                              */
   /* ----------------------------------------- */
-  /* Example style for Totem (can be removed if not needed) */
+  /* Example style for Gods (can be removed if not needed) */
 }
-.totem .item-form {
+.gods .item-form {
   font-family: "Roboto", sans-serif;
 }
-.totem .sheet-header {
+.gods .sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 auto;
   flex: 0 auto;
@@ -252,49 +252,49 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-.totem .sheet-header .profile-img {
+.gods .sheet-header .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
 }
-.totem .sheet-header .header-fields {
+.gods .sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-.totem .sheet-header h1.charname {
+.gods .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
-.totem .sheet-header h1.charname input {
+.gods .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
-.totem .sheet-tabs {
+.gods .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
-.totem .sheet-body,
-.totem .sheet-body .tab,
-.totem .sheet-body .tab .editor {
+.gods .sheet-body,
+.gods .sheet-body .tab,
+.gods .sheet-body .tab .editor {
   height: 100%;
 }
-.totem .tox .tox-editor-container {
+.gods .tox .tox-editor-container {
   background: #fff;
 }
-.totem .tox .tox-edit-area {
+.gods .tox .tox-edit-area {
   padding: 0 8px;
 }
-.totem .resource-label {
+.gods .resource-label {
   font-weight: bold;
 }
-.totem .items-header {
+.gods .items-header {
   height: 28px;
   margin: 2px 0;
   padding: 0;
@@ -305,11 +305,11 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-.totem .items-header > * {
+.gods .items-header > * {
   font-size: 14px;
   text-align: center;
 }
-.totem .items-header .item-name {
+.gods .items-header .item-name {
   font-weight: bold;
   padding-left: 5px;
   text-align: left;
@@ -317,7 +317,7 @@
   display: -ms-flexbox;
   display: flex;
 }
-.totem .items-list {
+.gods .items-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -325,12 +325,12 @@
   scrollbar-width: thin;
   color: #444;
 }
-.totem .items-list .item-list {
+.gods .items-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.totem .items-list .item-name {
+.gods .items-list .item-name {
   -webkit-box-flex: 2;
   -ms-flex: 2;
   flex: 2;
@@ -345,12 +345,12 @@
   display: -ms-flexbox;
   display: flex;
 }
-.totem .items-list .item-name h3, .totem .items-list .item-name h4 {
+.gods .items-list .item-name h3, .gods .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
 }
-.totem .items-list .item-controls {
+.gods .items-list .item-controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -361,25 +361,25 @@
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
-.totem .items-list .item-controls a {
+.gods .items-list .item-controls a {
   font-size: 12px;
   text-align: center;
   margin: 0 6px;
 }
-.totem .items-list .item {
+.gods .items-list .item {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   padding: 0 2px;
   border-bottom: 1px solid #c9c7b8;
 }
-.totem .items-list .item:last-child {
+.gods .items-list .item:last-child {
   border-bottom: none;
 }
-.totem .items-list .item .item-name {
+.gods .items-list .item .item-name {
   color: #191813;
 }
-.totem .items-list .item .item-name .item-image {
+.gods .items-list .item .item-name .item-image {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 30px;
   flex: 0 0 30px;
@@ -388,13 +388,13 @@
   border: none;
   margin-right: 5px;
 }
-.totem .items-list .item-prop {
+.gods .items-list .item-prop {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-.totem .items-list .items-header {
+.gods .items-list .items-header {
   height: 28px;
   margin: 2px 0;
   padding: 0;
@@ -405,29 +405,29 @@
   border: 2px groove #eeede0;
   font-weight: bold;
 }
-.totem .items-list .items-header > * {
+.gods .items-list .items-header > * {
   font-size: 12px;
   text-align: center;
 }
-.totem .items-list .items-header .item-name {
+.gods .items-list .items-header .item-name {
   padding-left: 5px;
   text-align: left;
 }
-.totem .item-formula {
+.gods .item-formula {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 200px;
   flex: 0 0 200px;
   padding: 0 8px;
 }
-.totem .effects .item .effect-source,
-.totem .effects .item .effect-duration,
-.totem .effects .item .effect-controls {
+.gods .effects .item .effect-source,
+.gods .effects .item .effect-duration,
+.gods .effects .item .effect-controls {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-.totem .effects .item .effect-controls {
+.gods .effects .item .effect-controls {
   border: none;
 }
 

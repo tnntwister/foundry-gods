@@ -13,23 +13,26 @@
 }
 
 /* custom styles */
-body.system-totem img#logo {
-  content: url("/systems/totem/assets/images/ui/logo_totem_foundry.webp");
+body.system-gods-system img#logo {
+  content: url("/systems/gods-system/assets/images/ui/logo_gods_foundry.webp");
   height:auto;
 }
 
+.sheet .window-content {
+  background: url(/systems/gods-system/assets/images/ui/box_background.webp) repeat;
+}
 
 /* Customize the chat roll area! */
 #chat-form textarea {
-  /*background: url(systems/totem/assets/images/ui/box_background.png) repeat; 
-  font-family: monospace; 
+  background: url(/systems/gods-system/assets/images/ui/box_background.webp) repeat; 
+  /*font-family: monospace; 
   font-size: 14px; 
   color: black; */
 }
 
 /* Customize the chat history area! */
 #chat-log .message {
-  /*background: url(systems/totem/assets/images/ui/box_background.png) repeat; 
-  color: #191813; */
+  background: url(/systems/gods-system/assets/images/ui/box_background.webp) repeat; 
+  /*color: #191813; */
 }
 
