@@ -12,6 +12,11 @@
           "value": 0,
           "min": 0,
           "max": 2
+        }        ,
+        "deadlyWound": {
+          "value": 0,
+          "min": 0,
+          "max": 2
         },
         "instinct":0,
         "activity": ""
@@ -22,7 +27,18 @@
       "attributes": {
         "level": {
           "label":"GODS.level",
-          "value": 1
+          "value": 1,
+          "max":10
+        },
+        "xp": {
+          "label":"GODS.experience",
+          "value": 0,
+          "max":0
+        },
+        "reputation": {
+          "label":"GODS.reputation",
+          "value": 0,
+          "max":0
         },
         "self_control": {
           "label":"GODS.self_control",
