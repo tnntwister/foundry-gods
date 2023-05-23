@@ -25,6 +25,9 @@
           "sign": "",
           "age": 15,
           "origin": ""
+        }, 
+        "stories": {
+          "biography": ""
         }
       }
     },

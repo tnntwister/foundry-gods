@@ -9,24 +9,7 @@
   </aside>
   <main>
     <!-- HEADER -->
-    <header class="char-header">
-      <section class="char-details">
-          <h1 class="char-name">
-              <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "GODS.CharacterNamePlaceholder"}}" spellcheck="false" />
-          </h1>
-          
-      </section>
-      <section class="char-level">
-            <div class="reputation">
-              <label>total {{ data.attributes.reputation.max }}</label>
-              <input name="system.attributes.reputation.value" type="text" value="{{data.attributes.reputation.value }}" data-dtype="Number" placeholder="1000" size="4" />
-            </div>
-            <div class="experience">
-                <input name="system.details.xp.value" type="text" value="{{data.attributes.xp.value}}" data-dtype="Number" data-allow-delta placeholder="0" size="4" />
-                <label>total {{data.attributes.xp.max}}</label>
-          </div>
-      </section>
-    </header>
+    {{> "systems/gods-system/templates/actor/parts/character-header.hbs"}}
 
     <!-- SHEET NAVIGATION -->
     <nav class="sheet-navigation sheet-tabs tabs flex-group-end" data-group="primary">
@@ -64,66 +47,35 @@
         <section class="sheet-content">
           <div class="tab character character-pane active" data-group="primary" data-tab="character">
               <!-- Character -->
-              <h3>Caractéristiques</h3>
-              <div class="grid grid-4col">
-                {{#each config.abilityCategories as |abilityCategory ackey|}}
-                  <div>
-                    <h4 class="align-center">{{ smarttl "ABILITY_CATEGORIES" ackey }}</h4>
-                    {{#each @root.system.abilities as |ability key|}}
-                      {{#if (eq ability.category ackey) }}
-                        <div class="ability flexcol flex-group-center items-center">
-                          <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ smarttl "ABILITIES" key }}">{{ smarttl "ABILITIES" key }}</label>
-                          <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-                        </div>
-                      {{/if}}
-                    {{/each}}
-                  </div>
-                {{/each}}
-                </div>
-              <h3>Compétences</h3>
-              <div class="grid grid-cols-3">
-              {{#each config.skillCategories as |skillCategory sckey|}}
-                  <div class="col">
-                    <h4>{{ smarttl "SKILLS_CATEGORIES" sckey }}</h4>
-                  {{#each @root.system.skills as |skill skey|}}
-                  
-                  {{#if (eq skill.category sckey) }}                       
-                    <div class="ability flexrow flex-group-center">
-                      <label style="flex:80%;" for="system.skills.{{skey}}.value" class="resource-label rollable flexlarge align-left" data-roll="+@skills.{{skey}}d10" data-label="{{ smarttl "SKILLS" skey }}">{{ smarttl "SKILLS" skey }} ({{skill.rarity}})</label>
-                      <input type="text" name="system.skills.{{skey}}.value" value="{{skill.value}}" data-dtype="Number"/>
-                    </div>
-                    {{/if}}
-                  {{/each}}
-                  </div>
-              {{/each}}
-            </div>
+            {{> "systems/gods-system/templates/actor/parts/character-features.hbs"}}
           </div>
           <div class="tab instincts" data-group="primary" data-tab="instincts">
-            instincts
+            <h3>Instincts</h3>
+            <!-- Rituals -->
+            {{> "systems/gods-system/templates/actor/parts/actor-instincts.hbs"}}
           </div>
-          <div class="tab gods" data-group="primary" data-tab="gods">
-            dieux
+          <div class="tab gods" data-group="primary" data-tab="gods">            
+            <h3>Dieux</h3>
             <!-- Rituals -->
             {{> "systems/gods-system/templates/actor/parts/actor-spells.html"}}
 
           </div>
           <div class="tab equipment" data-group="primary" data-tab="equipment">
-            equipement
+            <h3>Equipement</h3>
+            <!-- Rituals -->
+            {{> "systems/gods-system/templates/actor/parts/actor-items.html"}}
           </div>
           <div class="tab combat" data-group="primary" data-tab="combat">
-            combat
+            <h3>Combat</h3>
             <!-- effects -->
             {{> "systems/gods-system/templates/actor/parts/actor-effects.html"}}
           </div>
         
           <div class="tab stories" data-group="primary" data-tab="stories">
+            <h3>Histoire</h3>
             <section class="biography-details">
-                <div class="bio appearance">
-                    <label class="details-label">{{localize "PF2E.BiographyAppearance"}}</label>
-                    <span title="{{localize "PF2E.BiographyAppearanceTitle"}}" class="biography-content" style="min-height: 200px;" >
-                        {{editor enrichedContent.appearance target="system.biography" button=true owner=owner editable=editable}}
-                    </span>
-                </div>  
+              <label class="details-label">Bio</label>
+              {{editor system.stories.biography target="system.stories.biography" button=true owner=owner editable=editable}}
             </section>
         </div>
         
