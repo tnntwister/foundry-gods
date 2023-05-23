@@ -32,91 +32,77 @@
       "templates": ["base"],
       "attributes": {
         "level": {
-          "label":"GODS.level",
           "value": 1,
           "max":10
         },
         "xp": {
-          "label":"GODS.experience",
           "value": 0,
           "max":0
         },
         "reputation": {
-          "label":"GODS.reputation",
           "value": 0,
           "max":0
         },
         "self_control": {
-          "label":"GODS.self_control",
           "value": 0,
           "min": 0,
           "max": 5
         },
         "effort": {
-          "label":"GODS.effort",
           "value": 0, 
           "min": 0,
           "max": 5
         },
         "group": {
-          "label":"GODS.group",
           "value": 0,
           "min": 0,
           "max": 5
         }
       },      
       "abilities": {
-        "vig": {
-          "label":"GODS.strength_ability",
+        "strength": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "physical"
         },
-        "vie": {
-          "label":"GODS.constitution_ability",
+        "constitution": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "physical"
         },
-        "pre": {
-          "label":"GODS.precision_ability",
+        "precision": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "manual"
         },
-        "ref": {
-          "label":"GODS.reflexes_ability",
+        "reflexes": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "manual"
         },
-        "sav": {
-          "label":"GODS.knowledge_ability",
+        "knowledge": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "mental"
         },
-        "per": {
-          "label":"GODS.perception_ability",
+        "perception": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "mental"
         },
-        "vol": {
-          "label":"GODS.will_ability",
+        "will": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "social"
         },
-        "emp": {
-          "label":"GODS.empathy_ability",
+        "empathy": {
           "value": 0,
           "min": 0,
           "max": 5,
@@ -125,7 +111,6 @@
       },
       "skills": {
         "arts": {
-          "label":"GODS.skills.arts",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -133,7 +118,6 @@
           "rarity":0
         },
         "civilization": {
-          "label":"GODS.skills.civilization",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -141,7 +125,6 @@
           "rarity":0
         },
         "psychology": {
-          "label":"GODS.skills.psychology",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -149,7 +132,6 @@
           "rarity":0
         },
         "rumors": {
-          "label":"GODS.skills.rumors",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -157,7 +139,6 @@
           "rarity":0
         },
         "healing": {
-          "label":"GODS.skills.healing",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -165,15 +146,13 @@
           "rarity":0
         },
         "animalism": {
-          "label":"GODS.skills.animalism",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "animal",
           "rarity":1
         },
-        "dissection": {
-          "label":"GODS.skills.riding",
+        "riding": {
           "value": 0,
           "min": 0,
           "max": 5,
@@ -181,15 +160,13 @@
           "rarity":2
         },
         "wildlife": {
-          "label":"GODS.skills.wildlife",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "animal",
           "rarity":0
         },
-        "repulsion": {
-          "label":"GODS.skills.territory",
+        "territory": {
           "value": 0,
           "min": 0,
           "max": 5,
@@ -197,7 +174,6 @@
           "rarity":0
         },
         "tracks": {
-          "label":"GODS.skills.tracks",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -205,47 +181,41 @@
           "rarity":0
         },
         "crafting": {
-          "label":"GODS.skills.crafting",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "tool",
           "rarity":1
         },
-        "diy": {
-          "label":"GODS.skills.manipulation",
+        "manipulation": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "tool",
           "rarity":0
         },
-        "mecanical": {
-          "label":"GODS.skills.mecanisms",
+        "mecanisms": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "tool",
           "rarity":2
         },
-        "driving": {
-          "label":"GODS.skills.runes",
+        "runes": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "tool",
           "rarity":1
         },
-        "technology": {
-          "label":"GODS.skills.armory",
+        "armory": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "tool",
           "rarity":2
         },
-        "firearms": {
-          "label":"GODS.skills.shield",
+        "shield": {
           "value": 0,
           "min": 0,
           "max": 5,
@@ -253,15 +223,13 @@
           "rarity":1
         },
         "archery": {
-          "label":"GODS.skills.archery",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "weapon",
           "rarity":0
         },
-        "armory": {
-          "label":"GODS.skills.close",
+        "close": {
           "value": 0,
           "min": 0,
           "max": 5,
@@ -269,7 +237,6 @@
           "rarity":0
         },
         "throwing": {
-          "label":"GODS.skills.throwing",
           "value": 0,
           "min": 0,
           "max": 5,
@@ -277,15 +244,13 @@
           "rarity":0
         },
         "melee": {
-          "label":"GODS.skills.melee",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "weapon",
           "rarity":0
         },
-        "feed": {
-          "label":"GODS.skills.alertness",
+        "alertness": {
           "value": 0,
           "min": 0,
           "max": 5,
@@ -293,15 +258,13 @@
           "rarity":0
         },
         "atletics": {
-          "label":"GODS.skills.atletics",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "survival",
           "rarity":0
         },
-        "brawling": {
-          "label":"GODS.skills.flora",
+        "flora": {
           "value": 0,
           "min": 0,
           "max": 5,
@@ -309,55 +272,48 @@
           "rarity":0
         },
         "stealth": {
-          "label":"GODS.skills.stealth",
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "survival",
           "rarity":0
         },
-        "alertness": {
-          "label":"GODS.skills.road",
+        "road": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "survival",
           "rarity":0
         },
-        "environment": {
-          "label":"GODS.skills.burst",
+        "burst": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "world",
           "rarity":2
         },
-        "flora": {
-          "label":"GODS.skills.moons",
+        "moons": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "world",
           "rarity":1
         },
-        "road": {
-          "label":"GODS.skills.myths",
+        "myths": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "world",
           "rarity":1
         },
-        "toxics": {
-          "label":"GODS.skills.pantheons",
+        "pantheons": {
           "value": 0,
           "min": 0,
           "max": 5,
           "category": "world",
           "rarity":1
         },
-        "remains": {
-          "label":"GODS.skills.rituals",
+        "rituals": {
           "value": 0,
           "min": 0,
           "max": 5,

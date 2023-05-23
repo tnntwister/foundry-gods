@@ -1,134 +1,135 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
-  <aside>
-    <img class="logo" src="systems/gods-system/assets/images/ui/logo_gods_fiche.webp" height="94" width="230" alt="logo GODS" />
-    <div class="sidebar" data-group="dashboard" data-tab="sidebar">
-        <!--ID -->
-        {{> "systems/gods-system/templates/actor/parts/actor-id.hbs"}}
-    </div>
-    <img src="systems/gods-system/assets/images/ui/gods_nav_down.webp" height="158" width="230" alt="fin de la barre latérale" />
-</aside>
-<main>
-  <!-- HEADER -->
-  <header class="char-header">
-    <section class="char-details">
-        <h1 class="char-name">
-            <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "GODS.CharacterNamePlaceholder"}}" spellcheck="false" />
-        </h1>
-        
-    </section>
-    <section class="char-level">
-          <div class="reputation">
-            <label>total {{ data.attributes.reputation.max }}</label>
-            <input name="system.attributes.reputation.value" type="text" value="{{data.attributes.reputation.value }}" data-dtype="Number" placeholder="1000" size="4" />
+  <div class="form">
+    <aside>
+      <img class="logo" src="systems/gods-system/assets/images/ui/logo_gods_fiche.webp" height="94" width="230" alt="logo GODS" />
+      <div class="sidebar" data-group="dashboard" data-tab="sidebar">
+          <!--ID -->
+          {{> "systems/gods-system/templates/actor/parts/actor-id.hbs"}}
+      </div>
+  </aside>
+  <main>
+    <!-- HEADER -->
+    <header class="char-header">
+      <section class="char-details">
+          <h1 class="char-name">
+              <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "GODS.CharacterNamePlaceholder"}}" spellcheck="false" />
+          </h1>
+          
+      </section>
+      <section class="char-level">
+            <div class="reputation">
+              <label>total {{ data.attributes.reputation.max }}</label>
+              <input name="system.attributes.reputation.value" type="text" value="{{data.attributes.reputation.value }}" data-dtype="Number" placeholder="1000" size="4" />
+            </div>
+            <div class="experience">
+                <input name="system.details.xp.value" type="text" value="{{data.attributes.xp.value}}" data-dtype="Number" data-allow-delta placeholder="0" size="4" />
+                <label>total {{data.attributes.xp.max}}</label>
           </div>
-          <div class="experience">
-              <input name="system.details.xp.value" type="text" value="{{data.attributes.xp.value}}" data-dtype="Number" data-allow-delta placeholder="0" size="4" />
-              <label>total {{data.attributes.xp.max}}</label>
-        </div>
-    </section>
-  </header>
+      </section>
+    </header>
 
-  <!-- SHEET NAVIGATION -->
-  <nav class="sheet-navigation sheet-tabs tabs flex-group-end" data-group="primary">
-      <a class="item" data-tab="character" title="{{localize "GODS.tab_character_label"}}">
-          <i class="fas fa-address-card"></i>
-      </a>
+    <!-- SHEET NAVIGATION -->
+    <nav class="sheet-navigation sheet-tabs tabs flex-group-end" data-group="primary">
+        <a class="item" data-tab="character" title="{{localize "GODS.tab_character_label"}}">
+            <i class="fas fa-address-card"></i>
+        </a>
 
-      <a class="item" data-tab="instincts" title="{{localize "GODS.tab_instincts_label"}}">
-          <i class="fas fa-star"></i>
-      </a>
+        <a class="item" data-tab="instincts" title="{{localize "GODS.tab_instincts_label"}}">
+            <i class="fas fa-star"></i>
+        </a>
 
-      <a class="item" data-tab="gods" title="{{localize "GODS.tab_gods_label"}}">
-          <i class="fas fa-wand-magic-sparkles"></i>
-      </a>
+        <a class="item" data-tab="gods" title="{{localize "GODS.tab_gods_label"}}">
+            <i class="fas fa-wand-magic-sparkles"></i>
+        </a>
 
-      <a class="item" data-tab="equipment" title="{{localize "GODS.tab_equipment_label"}}">
-          <i class="fas fa-hammer"></i>
-      </a>
+        <a class="item" data-tab="equipment" title="{{localize "GODS.tab_equipment_label"}}">
+            <i class="fas fa-hammer"></i>
+        </a>
 
-      <a class="item" data-tab="stories" title="{{localize "GODS.tab_stories_label"}}">
-          <i class="fas fa-hand-paper"></i>
-      </a>
+        <a class="item" data-tab="stories" title="{{localize "GODS.tab_stories_label"}}">
+            <i class="fas fa-hand-paper"></i>
+        </a>
 
-      <a class="item" data-tab="combat" title="{{localize "GODS.tab_combat_label"}}">
-          <i class="fas fa-medal"></i>
-      </a>
+        <a class="item" data-tab="combat" title="{{localize "GODS.tab_combat_label"}}">
+            <i class="fas fa-medal"></i>
+        </a>
 
-      <a class="manage-tabs" data-action="manage-tabs" title="{{localize "GODS.tab_options"}}">
-          <i class="fas fa-fw fa-ellipsis-v"></i>
-      </a>
-  </nav>
+        <a class="manage-tabs" data-action="manage-tabs" title="{{localize "GODS.tab_options"}}">
+            <i class="fas fa-fw fa-ellipsis-v"></i>
+        </a>
+    </nav>
 
-  <!-- BODY -->
-  <section class="sheet-body">
-      <section class="sheet-content">
-        <div class="tab character character-pane active" data-group="primary" data-tab="character">
-            <!-- Character -->
-            <h3>Caractéristiques</h3>
-            <div class="grid grid-4col">
-              {{#each config.abilityCategories as |abilityCategory ackey|}}
-                <div>
-                  <h4 class="align-center">{{ localize abilityCategory.label }}</h4>
-                  {{#each @root.system.abilities as |ability key|}}
-                    {{#ife ability.category ackey }}
-                      <div class="ability flexcol flex-group-center items-center">
-                        <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ability.label}}">{{ability.label}}</label>
-                        <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-                      </div>
-                    {{/ife}}
-                  {{/each}}
-                </div>
-              {{/each}}
-              </div>
-            <h3>Compétences</h3>
-            <div class="grid grid-cols-3">
-            {{#each config.skillCategories as |skillCategory sckey|}}
-                <div class="col">
-                  <h4>{{ localize skillCategory.label }}</h4>
-                {{#each @root.system.skills as |skill skey|}}
-                
-                {{#ife skill.category sckey }}                       
-                  <div class="ability flexrow flex-group-center">
-                    <label style="flex:80%;" for="system.skills.{{skey}}.value" class="resource-label rollable flexlarge align-left" data-roll="+@skills.{{skey}}d10" data-label="{{skill.label}}">{{ localize skill.label}}  ({{skill.rarity}})</label>
-                    <input type="text" name="system.skills.{{skey}}.value" value="{{skill.value}}" data-dtype="Number"/>
+    <!-- BODY -->
+    <section class="sheet-body">
+        <section class="sheet-content">
+          <div class="tab character character-pane active" data-group="primary" data-tab="character">
+              <!-- Character -->
+              <h3>Caractéristiques</h3>
+              <div class="grid grid-4col">
+                {{#each config.abilityCategories as |abilityCategory ackey|}}
+                  <div>
+                    <h4 class="align-center">{{ smarttl "ABILITY_CATEGORIES" ackey }}</h4>
+                    {{#each @root.system.abilities as |ability key|}}
+                      {{#if (eq ability.category ackey) }}
+                        <div class="ability flexcol flex-group-center items-center">
+                          <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ smarttl "ABILITIES" key }}">{{ smarttl "ABILITIES" key }}</label>
+                          <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+                        </div>
+                      {{/if}}
+                    {{/each}}
                   </div>
-                  {{/ife}}
                 {{/each}}
                 </div>
-            {{/each}}
+              <h3>Compétences</h3>
+              <div class="grid grid-cols-3">
+              {{#each config.skillCategories as |skillCategory sckey|}}
+                  <div class="col">
+                    <h4>{{ smarttl "SKILLS_CATEGORIES" sckey }}</h4>
+                  {{#each @root.system.skills as |skill skey|}}
+                  
+                  {{#if (eq skill.category sckey) }}                       
+                    <div class="ability flexrow flex-group-center">
+                      <label style="flex:80%;" for="system.skills.{{skey}}.value" class="resource-label rollable flexlarge align-left" data-roll="+@skills.{{skey}}d10" data-label="{{ smarttl "SKILLS" skey }}">{{ smarttl "SKILLS" skey }} ({{skill.rarity}})</label>
+                      <input type="text" name="system.skills.{{skey}}.value" value="{{skill.value}}" data-dtype="Number"/>
+                    </div>
+                    {{/if}}
+                  {{/each}}
+                  </div>
+              {{/each}}
+            </div>
           </div>
-        </div>
-        <div class="tab instincts" data-group="primary" data-tab="instincts">
-          instincts
-        </div>
-        <div class="tab gods" data-group="primary" data-tab="gods">
-          dieux
-          <!-- Rituals -->
-          {{> "systems/gods-system/templates/actor/parts/actor-spells.html"}}
+          <div class="tab instincts" data-group="primary" data-tab="instincts">
+            instincts
+          </div>
+          <div class="tab gods" data-group="primary" data-tab="gods">
+            dieux
+            <!-- Rituals -->
+            {{> "systems/gods-system/templates/actor/parts/actor-spells.html"}}
 
+          </div>
+          <div class="tab equipment" data-group="primary" data-tab="equipment">
+            equipement
+          </div>
+          <div class="tab combat" data-group="primary" data-tab="combat">
+            combat
+            <!-- effects -->
+            {{> "systems/gods-system/templates/actor/parts/actor-effects.html"}}
+          </div>
+        
+          <div class="tab stories" data-group="primary" data-tab="stories">
+            <section class="biography-details">
+                <div class="bio appearance">
+                    <label class="details-label">{{localize "PF2E.BiographyAppearance"}}</label>
+                    <span title="{{localize "PF2E.BiographyAppearanceTitle"}}" class="biography-content" style="min-height: 200px;" >
+                        {{editor enrichedContent.appearance target="system.biography" button=true owner=owner editable=editable}}
+                    </span>
+                </div>  
+            </section>
         </div>
-        <div class="tab equipment" data-group="primary" data-tab="equipment">
-          equipement
-        </div>
-        <div class="tab combat" data-group="primary" data-tab="combat">
-          combat
-          <!-- effects -->
-          {{> "systems/gods-system/templates/actor/parts/actor-effects.html"}}
-        </div>
-      
-        <div class="tab stories" data-group="primary" data-tab="stories">
-          <section class="biography-details">
-              <div class="bio appearance">
-                  <label class="details-label">{{localize "PF2E.BiographyAppearance"}}</label>
-                  <span title="{{localize "PF2E.BiographyAppearanceTitle"}}" class="biography-content" style="min-height: 200px;" >
-                      {{editor enrichedContent.appearance target="system.biography" button=true owner=owner editable=editable}}
-                  </span>
-              </div>  
-          </section>
-      </div>
-      
-      </section>
-  </section>
-</main>
+        
+        </section>
+    </section>
+  </main>
+  </div>
 </form>
 

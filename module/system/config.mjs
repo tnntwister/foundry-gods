@@ -51,7 +51,7 @@ GODS.skillCategories = {
     "label":"GODS.skill_category.animal"
   },
   "tool": {
-    "label":"GODS.skill_category.machine"
+    "label":"GODS.skill_category.tool"
   },
   "weapon": {
     "label":"GODS.skill_category.weapon"
@@ -60,7 +60,7 @@ GODS.skillCategories = {
     "label":"GODS.skill_category.survival"
   },
   "world": {
-    "label":"GODS.skill_category.earth"
+    "label":"GODS.skill_category.world"
   }
 }
 

@@ -47,7 +47,7 @@ ul.unstyled li {
 }
 
 .padding-with-frieze {
-  margin: 10px 23% !important;
+  margin: 0 23% !important;
 }
 
 .padding-with-frieze li {
@@ -67,30 +67,32 @@ ul.unstyled li {
   overflow-y: hidden;
 }
 
-.actor.sheet form {
+.actor.sheet form .form {
   display: grid;
   /*grid:
       "sidebar header" 75px
       "sidebar nav" minmax(min-content, max-content)
       "sidebar content" 1fr/230px 1fr;*/
   grid-template-columns: minmax(230px,1fr) 3fr;    
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-attachment: local;
+  grid-template-rows: 1fr;
+  align-items: flex-start;
   height: 100%;
 }
 
-.actor.sheet aside {
+.actor.sheet .form aside {
   display: flex;
+  grid-row: span 1 / span 1;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-.actor.sheet aside .sidebar {
-  background-image: url(/systems/gods-system/assets/images/ui/aside_background.webp);
+  background-image: url(/systems/gods-system/assets/images/ui/barre_lateral.webp);
   background-repeat: no-repeat;
-  background-position: top left;
-  background-size: 230px 518px;
+  background-position: bottom center;
+  height: 100%;
+}
+
+.actor.sheet .form main {
+  grid-row: span 1 / span 1;
 }
 
 .system-gods-system .char-header {
@@ -111,19 +113,19 @@ ul.unstyled li {
   align-items: flex-end;
 }
 
-.system-gods-system .actor .sheet-body {
+.system-gods-system .sheet.actor .sheet-body {
   height: calc(100% - 35px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.system-gods-system .actor form {
+.system-gods-system .sheet.actor form {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.system-gods-system .actor form input[type=text], .system-gods-system .actor form input[type=number] {
+.system-gods-system .sheet.actor form input[type=text], .system-gods-system .sheet.actor form input[type=number] {
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   background: none;
@@ -132,48 +134,48 @@ ul.unstyled li {
   color: #333;
   border: 1px solid transparent;
 }
-.system-gods-system .actor form input[type=text]:hover:not(:disabled), .system-gods-system .actor form input[type=text]:focus, .system-gods-system .actor form input[type=number]:hover:not(:disabled), .system-gods-system .actor form input[type=number]:focus {
+.system-gods-system .sheet.actor form input[type=text]:hover:not(:disabled), .system-gods-system .sheet.actor form input[type=text]:focus, .system-gods-system .sheet.actor form input[type=number]:hover:not(:disabled), .system-gods-system .sheet.actor form input[type=number]:focus {
   border: 1px solid black;
   box-shadow: 0 0 10px #00005a;
 }
-.system-gods-system .actor form select {
+.system-gods-system .sheet.actor form select {
   font-size: var(--font-size-10);
   height: 18px;
   background: rgba(255, 255, 255, 0.5);
 }
-.system-gods-system .actor form label {
+.system-gods-system .sheet.actor form label {
   display: block;
 }
-.system-gods-system .actor form .mce-panel span {
+.system-gods-system .sheet.actor form .mce-panel span {
   display: inherit;
 }
-.system-gods-system .actor form.editable .rollable:hover {
+.system-gods-system .sheet.actor form.editable .rollable:hover {
   color: #000;
   text-shadow: 0 0 10px #00005a;
   cursor: pointer;
 }
-.system-gods-system .actor form .sheet-tabs {
+.system-gods-system .sheet.actor form .sheet-tabs {
   font-weight: 500;
   height: 30px;
 }
-.system-gods-system .actor form .sheet-tabs > .list-row {
+.system-gods-system .sheet.actor form .sheet-tabs > .list-row {
   line-height: 24px;
   padding-top: 3px;
   font-size: var(--font-size-12);
   text-align: center;
 }
-.system-gods-system .actor form .sheet-tabs > .list-row:last-of-type {
+.system-gods-system .sheet.actor form .sheet-tabs > .list-row:last-of-type {
   padding-right: 4px;
 }
-.system-gods-system .actor form .sheet-tabs > .list-row.active {
+.system-gods-system .sheet.actor form .sheet-tabs > .list-row.active {
   color: #000;
   font-weight: 700;
 }
-.system-gods-system .actor form .tab {
+.system-gods-system .sheet.actor form .tab {
   flex: 1;
   overflow: hidden;
 }
-.system-gods-system .actor form .tag-legacy {
+.system-gods-system .sheet.actor form .tag-legacy {
   float: left;
   margin: 0 2px 2px 0;
   padding: 0 3px;
@@ -188,32 +190,32 @@ ul.unstyled li {
 /* ---------------------------------------- */
 /* Actor Sheet                              */
 /* ---------------------------------------- */
-.system-gods-system .actor {
+.system-gods-system .sheet.actor {
   min-width: 650px;
   min-height: 450px;
 }
-.system-gods-system .actor .sidebar {
+.system-gods-system .sheet.actor .sidebar {
   width: 230px;
   min-height:518px;
 }
 
-.system-gods-system .actor .floatright {
+.system-gods-system .sheet.actor .floatright {
   float: right;
 }
-.system-gods-system .actor .sheet-upper {
+.system-gods-system .sheet.actor .sheet-upper {
   height: 268px;
 }
-.system-gods-system .actor .sheet-upper .sheet-header {
+.system-gods-system .sheet.actor .sheet-upper .sheet-header {
   height: 48px;
 }
-.system-gods-system .actor .sheet-upper .sheet-profile, .system-gods-system .actor .sheet-upper .sheet-showcase {
+.system-gods-system .sheet.actor .sheet-upper .sheet-profile, .system-gods-system .sheet.actor .sheet-upper .sheet-showcase {
   height: 220px;
 }
 
-.system-gods-system .actor .sheet-content {
+.system-gods-system .sheet.actor .sheet-content {
   padding:4px;
 }
-.system-gods-system .actor .sheet-sidebar {
+.system-gods-system .sheet.actor .sheet-sidebar {
   height: calc(100% - 48px);
   display: flex;
   flex-direction: column;
@@ -221,32 +223,32 @@ ul.unstyled li {
   overflow-x: hidden;
   overflow-y: auto;
 }
-.system-gods-system .actor .sheet-sidebar > * {
+.system-gods-system .sheet.actor .sheet-sidebar > * {
   flex: 1;
 }
-.system-gods-system .actor .sheet-sidebar .sidebar-summary {
+.system-gods-system .sheet.actor .sheet-sidebar .sidebar-summary {
   overflow-y: hidden;
 }
-.system-gods-system .actor.npc-sheet .sheet-upper {
+.system-gods-system .sheet.actor.npc-sheet .sheet-upper {
   height: 220px;
 }
-.system-gods-system .actor.npc-sheet .sheet-upper .sheet-showcase {
+.system-gods-system .sheet.actor.npc-sheet .sheet-upper .sheet-showcase {
   height: 172px;
 }
-.system-gods-system .actor.npc-sheet .sheet-lower {
+.system-gods-system .sheet.actor.npc-sheet .sheet-lower {
   height: calc(100% - 220px - 32px);
 }
-.system-gods-system .actor.npc-sheet section.sheet-body {
+.system-gods-system .sheet.actor.npc-sheet section.sheet-body {
   height: calc(100% - 48px);
 }
-.system-gods-system .actor .sheet-navigation {
+.system-gods-system .sheet.actor .sheet-navigation {
   border-top: 1px solid var(--secondary-background);
   border-bottom: 1px solid var(--primary-background);
 }
-.system-gods-system .actor .sheet-navigation .sheet-tabs > .list-row {
+.system-gods-system .sheet.actor .sheet-navigation .sheet-tabs > .list-row {
   border-radius: 5px 5px 0 0;
 }
-.system-gods-system .actor .sheet-navigation .sheet-tabs > .list-row.active {
+.system-gods-system .sheet.actor .sheet-navigation .sheet-tabs > .list-row.active {
   border: 1px solid #666;
   border-bottom: none;
   /* box-shadow: 0 0 10px inset #ff6400;
@@ -255,32 +257,32 @@ ul.unstyled li {
   color: #fff;
   text-shadow: none;
 }
-.system-gods-system .actor .sheet-header {
+.system-gods-system .sheet.actor .sheet-header {
   border-bottom: 1px solid var(--primary-background);
 }
-.system-gods-system .actor .sheet-header h1 {
+.system-gods-system .sheet.actor .sheet-header h1 {
   margin: 0;
   border: none;
 }
-.system-gods-system .actor .sheet-header h1.charname {
+.system-gods-system .sheet.actor .sheet-header h1.charname {
   flex-basis: 50%;
 }
-.system-gods-system .actor .sheet-header .editsheet {
+.system-gods-system .sheet.actor .sheet-header .editsheet {
   flex: 3;
   font-size: 0.625rem;
   text-align: center;
   margin-top: 3px;
 }
-.system-gods-system .actor .sheet-header .charlevel {
+.system-gods-system .sheet.actor .sheet-header .charlevel {
   flex: 0 0 150px;
   display: flex;
   align-items: center;
   text-align: right;
 }
-.system-gods-system .actor .sheet-header .charlevel > * {
+.system-gods-system .sheet.actor .sheet-header .charlevel > * {
   flex: 1;
 }
-.system-gods-system .actor .sheet-header .charlevel .level {
+.system-gods-system .sheet.actor .sheet-header .charlevel .level {
   font-family: var(--serif-condensed);
   font-weight: 700;
   align-items: center;
@@ -288,19 +290,19 @@ ul.unstyled li {
   display: flex;
   justify-content: end;
 }
-.system-gods-system .actor .sheet-header .charlevel .level input {
+.system-gods-system .sheet.actor .sheet-header .charlevel .level input {
   flex-basis: 1.5rem;
   margin-left: 0.1em;
   text-align: center;
 }
-.system-gods-system .actor .sheet-header .charlevel .xpbar {
+.system-gods-system .sheet.actor .sheet-header .charlevel .xpbar {
   width: 100%;
   flex: 0 0 8px;
   background: #666;
   border: 1px solid #000;
   border-radius: 3px;
 }
-.system-gods-system .actor .sheet-header .charlevel .xpbar .bar {
+.system-gods-system .sheet.actor .sheet-header .charlevel .xpbar .bar {
   height: 4px;
   margin: 1px;
   display: block;
@@ -308,7 +310,7 @@ ul.unstyled li {
   border: 1px solid #000;
   border-radius: 2px;
 }
-.system-gods-system .actor .sheet-header .charlevel .experience {
+.system-gods-system .sheet.actor .sheet-header .charlevel .experience {
   flex: 0 0 16px;
   display: flex;
   flex-direction: row;
@@ -316,10 +318,10 @@ ul.unstyled li {
   justify-content: flex-start;
   justify-content: flex-end;
 }
-.system-gods-system .actor .sheet-header .charlevel .experience > * {
+.system-gods-system .sheet.actor .sheet-header .charlevel .experience > * {
   flex: 1;
 }
-.system-gods-system .actor .sheet-header .charlevel .experience > input[type=text], .system-gods-system .actor .sheet-header .charlevel .experience > input[type=number] {
+.system-gods-system .sheet.actor .sheet-header .charlevel .experience > input[type=text], .system-gods-system .sheet.actor .sheet-header .charlevel .experience > input[type=number] {
   flex: 1;
   text-align: right;
   height: 16px;

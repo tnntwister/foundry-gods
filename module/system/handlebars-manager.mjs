@@ -28,20 +28,8 @@ export const registerHandlebarsHelpers = function () {
       return str.toLowerCase();
   });
 
-  // Ifis not equal
-  Handlebars.registerHelper('ifne', function (v1, v2, options) {
-    if (v1 !== v2) return options.fn(this);
-    else return options.inverse(this);
-  });
-
-  // if equal
-  Handlebars.registerHelper('ife', function (v1, v2, options) {
-    if (v1 === v2) return options.fn(this);
-    else return options.inverse(this);
-  });
-  // if equal
-  Handlebars.registerHelper('ifgt', function (v1, v2, options) {
-    if (v1 > v2) return options.fn(this);
-    else return options.inverse(this);
+  // search translation with variables
+  Handlebars.registerHelper('smarttl', function (arrayLabel,objectLabel, options) {
+    return game.i18n.localize(arrayLabel +"."+objectLabel+".name");
   });
 }
