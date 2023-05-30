@@ -3,9 +3,6 @@ import { registerSettings } from "./system/settings.mjs";
 
 // Import document classes.
 import { GodsActor } from "./documents/actor.mjs";
-import { GodsCharacter } from "./documents/character.mjs";
-import { GodsNpc } from "./documents/npc.mjs";
-import { GodsCreature } from "./documents/creature.mjs";
 
 import { GodsCharacterSheet } from "./sheets/character-sheet.mjs";
 import { GodsNpcSheet } from "./sheets/npc-sheet.mjs";
@@ -15,7 +12,7 @@ import { GodsItem } from "./documents/item.mjs";
 import { GodsItemSheet } from "./sheets/item-sheet.mjs";
 
 import { GodsRoll } from "./system/roll.mjs";
-import { GodsCombat } from "./system/fight.mjs";
+import { GodsCombat, GodsCombatTracker } from "./system/fight.mjs";
 
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates, registerHandlebarsHelpers } from "./system/handlebars-manager.mjs";
@@ -30,9 +27,7 @@ Hooks.once('init', async function() {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.gods = {
-    GodsCharacter,
-    GodsNpc,
-    GodsCreature,
+    GodsActor,
     GodsItem,
     GodsRoll,
     GodsCombat
@@ -53,6 +48,9 @@ Hooks.once('init', async function() {
   // Define custom Document classes
   CONFIG.Actor.documentClass = GodsActor;
   CONFIG.Item.documentClass = GodsItem;
+  CONFIG.Combat.documentClass = GodsCombat;
+  // CONFIG.CombatTracker = GodsCombatTracker;
+  // CombatTracker.prototype._getEntryContextOptions = GodsCombatTracker.getEntryContextOptions;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);

@@ -102,5 +102,9 @@ export const registerHooks = function () {
         }));
       });*/
   
-    
+    Hooks.on('renderCombatTracker', async (app, html, options) => {
+        // console.log("render Combat Tracker", CONFIG, CombatTracker);
+        // CombatTracker.renderCT();
+    });
+      
 }

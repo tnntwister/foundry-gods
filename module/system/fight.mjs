@@ -422,3 +422,89 @@ export class GodsCombat extends Combat {
     super._onDelete()*/
   }
 }
+
+export class GodsCombatTracker extends CombatTracker {
+  /**
+   * Default folder context actions
+   * @param html {jQuery}
+   * @private
+   */
+  /* -------------------------------------------- */
+
+  /**
+   * Get the sidebar directory entry context options
+   * @return {Object}   The sidebar entry context options
+   * @private
+   */
+  static getEntryContextOptions() {
+    return [
+      {
+        name: 'Update',
+        icon: '<i class="fas fa-edit"></i>',
+        callback: this._onConfigureCombatant.bind(this),
+      },
+      {
+        name: 'Reroll',
+        icon: '<i class="fas fa-dice-d20"></i>',
+        callback: (li) => this.viewed.rollInitiative(li.data('combatant-id')),
+      },
+      {
+        name: 'Remove',
+        icon: '<i class="fas fa-skull"></i>',
+        // callback: (li) => this.viewed.deleteCombatant(li.data('combatant-id')),
+        callback: (li) => this.viewed.deleteEmbeddedDocuments('Combatant', [li.data('combatant-id')]),
+      },
+      {
+        name: 'CloneActor',
+        icon: '<i class="far fa-copy fa-fw"></i>',
+        callback: async (li) => {
+          const combatant = this.viewed.combatants.get(li.data('combatant-id'));
+          await combatant.clone({}, { save: true });
+        },
+      },
+    ];
+  }
+
+  static renderCT(){
+    // Find the combat element, which is where combatants are stored.
+    let newHtml = html.find('#combat');
+    if (newHtml.length < 1) {
+      newHtml = html;
+    }
+    console.log("combat tracker", newHtml);
+    /*
+    // If there's as combat, we can proceed.
+    if (game.combat) {
+      // Retrieve a list of the combatants grouped by actor type and sorted
+      // by their initiative count.
+      let combatants = this.getCombatantsData();
+
+      // Add a counter for the total number of moves all characters have made.
+      let moveTotal = 0;
+      if (combatants.character) {
+        combatants.character.forEach(c => {
+          moveTotal = c.flags.dungeonworld ? moveTotal + Number(c.flags.dungeonworld.moveCount) : moveTotal;
+        });
+      }
+
+      // Get the custom template.
+      let template = 'systems/dungeonworld/templates/combat/combat.html';
+      let templateData = {
+        combatants: combatants,
+        moveTotal: moveTotal
+      };
+
+      // Render the template and update the markup with our new version.
+      let content = await renderTemplate(template, templateData)
+      newHtml.find('#combat-tracker').remove();
+      newHtml.find('.combat-tracker-header').after(content);
+
+      // Drag handler for the combat tracker.
+      if (game.user.isGM) {
+        newHtml.find('.directory-item.actor-elem').attr('draggable', true).addClass('draggable');
+      }
+    }*/
+  }
+
+  /* -------------------------------------------- */
+}
