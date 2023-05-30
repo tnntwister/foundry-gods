@@ -347,7 +347,7 @@ export class GodsCombat extends Combat {
       difficulty = 5;
     } 
 
-    let cf = CONFIG.Combat.initiative.formula.replace('cs>7', 'cs>'+ difficulty.toString());
+    let cf = CONFIG.Combat.initiative.formula.replace('cs>=7', 'cs>='+ difficulty.toString());
     console.log('formula', cf);
     let roll = null;
     if (isNewerVersion(game.version, '0.8.9')) {
