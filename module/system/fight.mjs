@@ -330,7 +330,8 @@ export class GodsCombat extends Combat {
     // console.log(`${game.system.title} | Combat.rollInitiative()`, ids, formula, messageOptions);
     // Structure input data
     ids = typeof ids === "string" ? [ids] : ids;
-
+    const updates = [];
+    const messages = [];
     // étape 1 : on vérifie que le combattant est un pj
     /*if (ids.length == 1){
       console.log("il n'y a qu'un actor en lice");
@@ -338,57 +339,42 @@ export class GodsCombat extends Combat {
       console.log("il faut prendre le premier pj pour lancer la confrontation");
     }*/
     const combatant = this.combatants.get(ids[0]);
-    let token = canvas.scene.tokens.get(combatant.tokenId);
-    combatant.type = game.actors.get( combatant.actorId)?.type;
-    combatant.disposition = token.disposition;
-    let enemies = [];
+    const combatantAttitude = combatant.flags.world.attitude;
+    let difficulty = 7;
+    if (combatantAttitude == 'passive'){
+      difficulty = 9;
+    } else if (combatantAttitude == 'offensive'){
+      difficulty = 5;
+    } 
 
-    let adversaries = this.combatants.filter((cbt) => {
-      let token = canvas.scene.tokens.get(cbt.tokenId);
-      let enemy = token.actor;
-      const isEnemy = (token.disposition == -1) ? true : false;
-      if (isEnemy){
-        enemies.push({
-          id: enemy.id,
-          name: enemy.name,
-          img: enemy.img,
-          achievement: parseInt(enemy.system.reroll.achievement.value) + 7,
-          conservation: 7 - parseInt(enemy.system.reroll.conservation.value)
-        })
-      }
-      return isEnemy;
-    });
-
-    let allies = this.combatants.filter((cbt) => {
-      let token = canvas.scene.tokens.get(cbt.tokenId);
-      return (token.disposition == 1 && cbt.id != combatant.id) ? true : false;
-    });
-
-    if (combatant.type != 'character'){
-      let warningDialogHTML = await renderTemplate('systems/totem/templates/dialogs/warning.html', { 
-        warningText: "Seuls les PJs peuvent initier des confrontations. Relancer l'opération au tour du PJ actif."
-      });
-      Dialog.prompt({   
-        title: "Avertissement",     
-        content: warningDialogHTML,
-        label: 'Okay !',
-        callback: () => {
-          // console.log('Il a compris');
-        },
-      });
+    let cf = CONFIG.Combat.initiative.formula.replace('cs<7', 'cs<'+ difficulty.toString());
+    console.log('formula', cf);
+    let roll = null;
+    if (isNewerVersion(game.version, '0.8.9')) {
+      roll = await combatant.getInitiativeRoll(cf).evaluate({ async: true });
     } else {
-      // étape 2 : on envoie les infos
-      let fightingActor = game.actors.get(combatant.actorId);
-      GodsFight.ui({ 
-        speakerId: combatant.actorId, 
-        speakerWeapons: fightingActor.items.filter(item => item.type == 'weapon'),
-        speakerExperience:fightingActor.system.attributes.experience.value,
-        speakerEffects: token.actor.effects,
-        adversaries: enemies,
-        allies: allies
-      });
+      roll = await combatant.getInitiativeRoll(cf);
     }
 
+    updates.push({ _id: ids[0], initiative: roll.total });
+    await this.updateEmbeddedDocuments('Combatant', updates);
+
+    let messageData = {
+      speaker: {
+        scene: canvas.scene.id,
+        actor: combatant.actor ? combatant.actor.id : null,
+        token: combatant.token.id,
+        alias: combatant.token.name,
+      },
+      flavor: `${combatant.token.name} tire son Initiative! <br> `,
+      flags: { 'core.initiativeRoll': true },
+    };
+    let rollMode = game.settings.get('core', 'rollMode');
+
+    const chatData = await roll.toMessage(messageData, { create: false, rollMode });
+    messages.push(chatData);
+    await CONFIG.ChatMessage.documentClass.create(messages);
+    return this;
   }
 
   nextRound() {
