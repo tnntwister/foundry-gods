@@ -59,6 +59,14 @@ ul.unstyled li {
 }
 
 /* ----------------------------------------- */
+/* Combat tracker                            */
+/* ----------------------------------------- */
+
+.system-gods-system .combat-sidebar li.combatant .roll {
+  background-image: url(../../../icons/svg/d20.svg);
+}
+
+/* ----------------------------------------- */
 /* Sheet Structure                           */
 /* ----------------------------------------- */
 .system-gods-system .window-content {

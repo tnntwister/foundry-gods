@@ -31,7 +31,11 @@
   "GODS.difficulty":"Difficulté",  
   "GODS.help":"Entraide",  
   "GODS.tooling":"Equipement",  
-  
+  "ATTITUDES": {
+    "offensive": { "name": "Offensif"},
+    "active": { "name": "Actif"},
+    "passive": { "name": "Passif"}
+  },
   "ABILITIES": {
     "strength": { "name": "Puissance"},
     "constitution": { "name": "Résistance"},

@@ -35,4 +35,24 @@ export const registerHandlebarsHelpers = function () {
   Handlebars.registerHelper('smarttl', function (arrayLabel,objectLabel, options) {
     return game.i18n.localize(arrayLabel +"."+objectLabel+".name");
   });
+
+  Handlebars.registerHelper('getOffensiveStatus', function (combatant) {
+    if (combatant.isOffensive) return "<a><i class='fas fa-hand-paper'></i></a>"; 
+    return "<a class='offensive-status'><i class='far fa-hand-paper'></i></a>";
+  });
+
+  Handlebars.registerHelper('getActiveStatus', function (combatant) {
+    if (combatant.isActive) return "<a><i class='fas fa-bow-arrow'></i></a>"; 
+    return "<a class='active-status'><i class='far fa-bow-arrow'></i></a>";
+  });
+
+  Handlebars.registerHelper('getPassiveStatus', function (combatant) {
+    if (combatant.isPassive) return "<a><i class='fas fa-shield-cross'></i></a>"; 
+    return "<a class='passive-status'><i class='far fa-shield-cross'></i></a>";
+  });
+
+  Handlebars.registerHelper('getCombatTrackerColor', function (isCharacter, isNpc) {
+      if (isCharacter) return "character";
+      if (isNpc) return "npc";
+  });
 }

@@ -465,46 +465,53 @@ export class GodsCombatTracker extends CombatTracker {
     ];
   }
 
-  static renderCT(){
-    // Find the combat element, which is where combatants are stored.
-    let newHtml = html.find('#combat');
-    if (newHtml.length < 1) {
-      newHtml = html;
-    }
-    console.log("combat tracker", newHtml);
-    /*
-    // If there's as combat, we can proceed.
-    if (game.combat) {
-      // Retrieve a list of the combatants grouped by actor type and sorted
-      // by their initiative count.
-      let combatants = this.getCombatantsData();
-
-      // Add a counter for the total number of moves all characters have made.
-      let moveTotal = 0;
-      if (combatants.character) {
-        combatants.character.forEach(c => {
-          moveTotal = c.flags.dungeonworld ? moveTotal + Number(c.flags.dungeonworld.moveCount) : moveTotal;
-        });
-      }
-
-      // Get the custom template.
-      let template = 'systems/dungeonworld/templates/combat/combat.html';
-      let templateData = {
-        combatants: combatants,
-        moveTotal: moveTotal
-      };
-
-      // Render the template and update the markup with our new version.
-      let content = await renderTemplate(template, templateData)
-      newHtml.find('#combat-tracker').remove();
-      newHtml.find('.combat-tracker-header').after(content);
-
-      // Drag handler for the combat tracker.
-      if (game.user.isGM) {
-        newHtml.find('.directory-item.actor-elem').attr('draggable', true).addClass('draggable');
-      }
-    }*/
-  }
 
   /* -------------------------------------------- */
+  get template() {
+      return "systems/gods-system/templates/combat/tracker.hbs";
+  }
+
+  async getData(options) {
+      const context = await super.getData(options);
+
+      if (!context.hasCombat) {
+        return context;
+      }
+
+      for (let [i, combatant] of context.combat.turns.entries()) {
+          context.turns[i].attitude = combatant.getFlag("world", "attitude");
+          context.turns[i].isPlayer = combatant.actor.type == "character";
+          context.turns[i].isNpc = combatant.actor.type == "npc";
+          context.turns[i].isCreature = combatant.actor.type == "creature";
+      }
+      return context;
+  }
+
+  activateListeners(html) {
+      super.activateListeners(html);
+
+      html.find(".status").click(this._setStatut.bind(this));        
+  }
+
+  /**
+   * @description Use to put an attitude to an actor
+   * @param {*} event 
+   */
+  async _setStatut(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const btn = event.currentTarget;
+      const li = btn.closest(".combatant");
+      const combat = this.viewed;
+      const combatant = combat.combatants.get(li.dataset.combatantId);
+      
+      if ($(btn).hasClass('offensive'))
+        await combatant.setFlag("world", "attitude", "offensive");
+      else if  ($(btn).hasClass('active'))  
+        await combatant.setFlag("world", "attitude", "active");
+      else if  ($(btn).hasClass('passive'))  
+        await combatant.setFlag("world", "attitude", "passive");  
+      else  
+        await combatant.setFlag("world", "attitude", null);
+  }
 }

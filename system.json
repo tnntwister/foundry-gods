@@ -2,7 +2,7 @@
   "id": "gods-system",
   "title": "GODS system",
   "description": "The GODS system for FoundryVTT!",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "compatibility": {
     "minimum": 10,
     "verified": "10.287",

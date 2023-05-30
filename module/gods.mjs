@@ -49,7 +49,7 @@ Hooks.once('init', async function() {
   CONFIG.Actor.documentClass = GodsActor;
   CONFIG.Item.documentClass = GodsItem;
   CONFIG.Combat.documentClass = GodsCombat;
-  // CONFIG.CombatTracker = GodsCombatTracker;
+  CONFIG.ui.combat = GodsCombatTracker;
   // CombatTracker.prototype._getEntryContextOptions = GodsCombatTracker.getEntryContextOptions;
 
   // Register sheet application classes
